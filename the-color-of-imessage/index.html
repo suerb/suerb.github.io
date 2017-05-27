@@ -378,7 +378,7 @@
 系统版本：iOS 9 beta 2
 网络环境：WIFI + 4G，部分需进入飞行模式
 </code></pre>
-<h2>气泡的间距</h2>
+<h2 id="气泡的间距"><a class="header-anchor" href="#气泡的间距">¶</a>气泡的间距</h2>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/margin-of-the-imessage.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/margin-of-the-imessage.png" alt="iMessage 的气泡间距"></a></p>
 <p>为了探究 iMessage 的间距规则，如上图所示，简单推导出以下几个参数（未必准确）：</p>
 <ol>
@@ -410,10 +410,10 @@
 </blockquote>
 <p>得出结论：若 2 条消息的<strong>本地实际发出时间</strong>相隔<strong>大于等于</strong> 1 分钟，则增大气泡之间的间距。并非根据对方<strong>实际接收时间</strong>（已送达）来判断。</p>
 <p>为什么呢？</p>
-<h4>一切依从于内容</h4>
+<h4 id="一切依从于内容"><a class="header-anchor" href="#一切依从于内容">¶</a>一切依从于内容</h4>
 <p>Apple 的 《<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html" target="_blank" rel="external">Human Interface Guidelines</a>》在最开头就讲述了自 iOS 7 以来扁平化的初衷：</p>
 <blockquote>
-<p><strong>Defer to Content</strong>
+<p><strong>Defer to Content</strong><br>
 Although crisp, beautiful UI and fluid motion are highlights of the iOS 7 experience, the user’s content is at its heart.</p>
 </blockquote>
 <p>聊天界面里，核心内容就是「信息」，其他内容都需要让步，但是让步不等于放弃，而是巧妙地把时间戳隐藏起来。</p>
@@ -425,11 +425,11 @@ Although crisp, beautiful UI and fluid motion are highlights of the iOS 7 experi
 <p><strong>为什么只有 2 种间距？</strong></p>
 <p>多间距反而会增加辨识难度。线性地增加多种不同的间距，还不如直接平均地展示时间戳。</p>
 <p>2 种间距，刚刚好。</p>
-<h2>气泡的颜色</h2>
+<h2 id="气泡的颜色"><a class="header-anchor" href="#气泡的颜色">¶</a>气泡的颜色</h2>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/color-of-the-imessage.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/color-of-the-imessage.png" alt="iMessage 的气泡颜色"></a></p>
 <p>如上图所示，从上至下是由浅到深的过程，并且中间的线性渐变非常严谨。</p>
 <blockquote>
-<p>藏在箱底的老照片，随着时光流逝，慢慢褪色。
+<p>藏在箱底的老照片，随着时光流逝，慢慢褪色。<br>
 —— 达尔文</p>
 </blockquote>
 <p>iMessage 的气泡也一样，时间越久远（虽然只是一屏几百像素之隔），色彩就越淡。这正代表着 Jony Ive 的一贯态度——「True to the material」。</p>
@@ -628,7 +628,7 @@ Although crisp, beautiful UI and fluid motion are highlights of the iOS 7 experi
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">气泡的间距</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">一切依从于内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">气泡的颜色</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#气泡的间距"><span class="nav-number">1.</span> <span class="nav-text">¶气泡的间距</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一切依从于内容"><span class="nav-number">1.0.1.</span> <span class="nav-text">¶一切依从于内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#气泡的颜色"><span class="nav-number">2.</span> <span class="nav-text">¶气泡的颜色</span></a></li></ol></div>
             
 
           </div>
