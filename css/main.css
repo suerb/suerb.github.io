@@ -303,6 +303,7 @@ body {
   font-family: 'Lato, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 2;
+  letter-spacing: 1px;
   color: #555;
   background: #fff;
 }
@@ -329,8 +330,7 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  font-weight: bold;
-  line-height: 1.5;
+  line-height: 2;
   font-family: 'Lato, "PingFang SC", "Microsoft YaHei", sans-serif', 'Lato, "PingFang SC", "Microsoft YaHei", sans-serif', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h2,
@@ -1810,7 +1810,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff45a2;
+  background: #ff82ff;
 }
 .links-of-blogroll {
   font-size: 13px;
