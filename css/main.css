@@ -71,6 +71,9 @@ h6 {
     font-weight: bold !important;
   }
 }
+.post-meta {
+  margin-bottom: 40px;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1768,7 +1771,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8effff;
+  background: #ff2dff;
 }
 .links-of-blogroll {
   font-size: 13px;
