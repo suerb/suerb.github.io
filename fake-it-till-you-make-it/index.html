@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="这个主题演讲讲述了如何简单地通过 keynote 使用图片、文字等基本元素来设计带动效的原型，并演示 Xcode 部分简易代码来输出简单的可交互原型。 团队角色与实践「天下武功，唯快不破」——互联网产品与市场竞争日益激烈，为了实现快速迭代，现在的产品研发周期已经压缩得非常非常短。 但是，为了不犯错、少犯错，项目初期的原型阶段是非常重要、廉价的试错方法，切不可压缩这个时间。Apple 的团队肯定也经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结 Prototyping: Fake It Till You Make It - WWDC 2014">
+<meta property="og:url" content="http://yoursite.com/fake-it-till-you-make-it/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="这个主题演讲讲述了如何简单地通过 keynote 使用图片、文字等基本元素来设计带动效的原型，并演示 Xcode 部分简易代码来输出简单的可交互原型。 团队角色与实践「天下武功，唯快不破」——互联网产品与市场竞争日益激烈，为了实现快速迭代，现在的产品研发周期已经压缩得非常非常短。 但是，为了不犯错、少犯错，项目初期的原型阶段是非常重要、廉价的试错方法，切不可压缩这个时间。Apple 的团队肯定也经">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/3steps.png">
+<meta property="og:updated_time" content="2015-10-17T00:12:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总结 Prototyping: Fake It Till You Make It - WWDC 2014">
+<meta name="twitter:description" content="这个主题演讲讲述了如何简单地通过 keynote 使用图片、文字等基本元素来设计带动效的原型，并演示 Xcode 部分简易代码来输出简单的可交互原型。 团队角色与实践「天下武功，唯快不破」——互联网产品与市场竞争日益激烈，为了实现快速迭代，现在的产品研发周期已经压缩得非常非常短。 但是，为了不犯错、少犯错，项目初期的原型阶段是非常重要、廉价的试错方法，切不可压缩这个时间。Apple 的团队肯定也经">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/3steps.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/fake-it-till-you-make-it/"/>
+
+
+
+
+
+  <title>总结 Prototyping: Fake It Till You Make It - WWDC 2014 | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/fake-it-till-you-make-it/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">总结 Prototyping: Fake It Till You Make It - WWDC 2014</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-07T08:58:54+08:00">
+                2015-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这个主题演讲讲述了如何简单地通过 keynote 使用图片、文字等基本元素来设计带动效的原型，并演示 Xcode 部分简易代码来输出简单的可交互原型。</p>
+<h2 id="团队角色与实践"><a href="#团队角色与实践" class="headerlink" title="团队角色与实践"></a>团队角色与实践</h2><p>「天下武功，唯快不破」——互联网产品与市场竞争日益激烈，为了实现快速迭代，现在的产品研发周期已经压缩得非常非常短。</p>
+<p>但是，为了不犯错、少犯错，项目初期的原型阶段是非常重要、廉价的试错方法，切不可压缩这个时间。Apple 的团队肯定也经历过此阶段，请看最后的那一句：</p>
+<ul>
+<li>Developers at companies: Tell your management that prototyping saves time and money by helping you build the right things.</li>
+<li>Solo developers: Draw, animate, and hack before you build something.</li>
+<li>Can’t code: Draw and animate, you don’t need code, yet.</li>
+<li>Designers: Make animated and interactive things.</li>
+<li>Management: Make time for designers and engineers to prototype. 给设计师和工程师预留出制作原型的时间。</li>
+</ul>
+<h2 id="为什么需要做有动效并可交互的原型？"><a href="#为什么需要做有动效并可交互的原型？" class="headerlink" title="为什么需要做有动效并可交互的原型？"></a>为什么需要做有动效并可交互的原型？</h2><p>原因之一，就是测试想法（test idea），与精益创业的理念一致，制作出 MVP（minimum viable produce）。</p>
+<p>其二，获得新的想法（get new idea）。</p>
+<p>然后，整个演讲就围绕着怎么做来展开。</p>
+<h2 id="快速迭代三步曲"><a href="#快速迭代三步曲" class="headerlink" title="快速迭代三步曲"></a>快速迭代三步曲</h2><ol>
+<li>Make fake apps 制作原型</li>
+<li>Show people 展示给用户</li>
+<li>Learn from their feedback 获取反馈并优化</li>
+</ol>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/3steps.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/3steps.png" alt="98229E28-19D6-4AC5-809A-391A352233DA"></a></p>
+<h3 id="1-Make-制作阶段"><a href="#1-Make-制作阶段" class="headerlink" title="1. Make 制作阶段"></a>1. Make 制作阶段</h3><p>在「make」 阶段，我们需要问自己以下 3 个问题：</p>
+<ol>
+<li>What needs to be more real? 什么需要交互？</li>
+<li>What can we fake? 我们可以如何处理？</li>
+<li>Where will they use it? 用户在哪些场景下使用？</li>
+</ol>
+<h3 id="2-Show-展示阶段"><a href="#2-Show-展示阶段" class="headerlink" title="2. Show 展示阶段"></a>2. Show 展示阶段</h3><p>制作完成之后，就要向用户展示并使用原型，然后向他们提出以下问题：</p>
+<ol>
+<li>Do you know how to <strong><strong><em>__</em></strong></strong>?</li>
+<li>Is it easy to <strong><strong>___</strong></strong>?</li>
+<li>How can we make this better?</li>
+</ol>
+<blockquote>
+<p>向用户提问时需要注意的细节：</p>
+<ol>
+<li><p>向谁提问？当然是目标用户</p>
+</li>
+<li><p>不要与用户争论，不要忽略他们的意见，需要仔细聆听，因为现在不是探讨这个方案可不可行的时候，而是从用户身上获取信息的时候。</p>
+</li>
+<li><p>留意那些让用户感到疑惑或受挫的地方，同时也要留意那些让他们感到愉悦的亮点。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="3-Learn-优化阶段"><a href="#3-Learn-优化阶段" class="headerlink" title="3. Learn 优化阶段"></a>3. Learn 优化阶段</h3><p>获取到用户反馈后，快速总结，提出以下问题：</p>
+<ol>
+<li>What’s working in what we showed them?</li>
+<li><p>What’s not working?</p>
+<p> 2.1 What did people did not understand? </p>
+<p> 2.2 What did they stumble over or was confusing in some way? 他们在某些程度上遇到什么挫折或者疑惑？</p>
+</li>
+<li><p>What other ideas does this give us about what we might want to do next? 我们下一步可以做些什么？</p>
+</li>
+</ol>
+<p>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fluidbox-lightbox-for-ghost/" rel="next" title="为 Ghost 添加 Fluidbox Lightbox 图片查看插件达到 Medium 的效果">
+                <i class="fa fa-chevron-left"></i> 为 Ghost 添加 Fluidbox Lightbox 图片查看插件达到 Medium 的效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/wechat-patents-shake-and-sound/" rel="prev" title="微信摇一摇专利 - 基于节目的交互方法和装置">
+                微信摇一摇专利 - 基于节目的交互方法和装置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#团队角色与实践"><span class="nav-number">1.</span> <span class="nav-text">团队角色与实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要做有动效并可交互的原型？"><span class="nav-number">2.</span> <span class="nav-text">为什么需要做有动效并可交互的原型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速迭代三步曲"><span class="nav-number">3.</span> <span class="nav-text">快速迭代三步曲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Make-制作阶段"><span class="nav-number">3.1.</span> <span class="nav-text">1. Make 制作阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Show-展示阶段"><span class="nav-number">3.2.</span> <span class="nav-text">2. Show 展示阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Learn-优化阶段"><span class="nav-number">3.3.</span> <span class="nav-text">3. Learn 优化阶段</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

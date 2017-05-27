@@ -1,0 +1,762 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="最近在研究聊天方面的东西，正好看到这个 知乎上的问题，就顺便整理一下 iMessage 的一些细节。问题归纳如下：   为什么不同时间发出的信息会有不同间距？ 为什么 iMessage 的气泡颜色从上至下会越来越深？   先说结论：   一切依从于内容，用简单的「间距」方式表达「时间」间隔，增强信息之间的关联度； 时间会让一切「褪色」；快速聚焦。   这是一个逆向推导的过程，Apple 设计师的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iMessage 会话气泡的魔鬼细节">
+<meta property="og:url" content="http://yoursite.com/the-color-of-imessage/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="最近在研究聊天方面的东西，正好看到这个 知乎上的问题，就顺便整理一下 iMessage 的一些细节。问题归纳如下：   为什么不同时间发出的信息会有不同间距？ 为什么 iMessage 的气泡颜色从上至下会越来越深？   先说结论：   一切依从于内容，用简单的「间距」方式表达「时间」间隔，增强信息之间的关联度； 时间会让一切「褪色」；快速聚焦。   这是一个逆向推导的过程，Apple 设计师的">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/imessage-zhihu.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/margin-of-the-imessage.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/color-of-the-imessage.png">
+<meta property="og:updated_time" content="2015-09-20T08:16:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iMessage 会话气泡的魔鬼细节">
+<meta name="twitter:description" content="最近在研究聊天方面的东西，正好看到这个 知乎上的问题，就顺便整理一下 iMessage 的一些细节。问题归纳如下：   为什么不同时间发出的信息会有不同间距？ 为什么 iMessage 的气泡颜色从上至下会越来越深？   先说结论：   一切依从于内容，用简单的「间距」方式表达「时间」间隔，增强信息之间的关联度； 时间会让一切「褪色」；快速聚焦。   这是一个逆向推导的过程，Apple 设计师的">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/imessage-zhihu.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/the-color-of-imessage/"/>
+
+
+
+
+
+  <title>iMessage 会话气泡的魔鬼细节 | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/the-color-of-imessage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iMessage 会话气泡的魔鬼细节</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T09:17:13+08:00">
+                2015-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://7xigda.com1.z0.glb.clouddn.com/imessage-zhihu.jpg" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/imessage-zhihu.jpg" alt="图片来源：知乎"></a></p>
+<p>最近在研究聊天方面的东西，正好看到这个 <a href="http://www.zhihu.com/question/31576223/answer/52592534" target="_blank" rel="external">知乎上的问题</a>，就顺便整理一下 iMessage 的一些细节。问题归纳如下：</p>
+<blockquote>
+<ol>
+<li>为什么不同时间发出的信息会有不同间距？</li>
+<li>为什么 iMessage 的气泡颜色从上至下会越来越深？</li>
+</ol>
+</blockquote>
+<p>先说结论：</p>
+<blockquote>
+<ol>
+<li>一切依从于内容，用简单的「间距」方式表达「时间」间隔，增强信息之间的关联度；</li>
+<li>时间会让一切「褪色」；快速聚焦。</li>
+</ol>
+</blockquote>
+<p>这是一个逆向推导的过程，Apple 设计师的真实想法我暂时不知道，但是推导的过程，即探索「为什么」的过程，其实也非常有趣。欢迎大家探讨。</p>
+<p>这里只分析气泡的部分展示形态，不涉及到动效。</p>
+<pre><code>设备：iPhone 6
+系统版本：iOS 9 beta 2
+网络环境：WIFI + 4G，部分需进入飞行模式
+</code></pre><h2 id="气泡的间距"><a href="#气泡的间距" class="headerlink" title="气泡的间距"></a>气泡的间距</h2><p><a href="http://7xigda.com1.z0.glb.clouddn.com/margin-of-the-imessage.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/margin-of-the-imessage.png" alt="iMessage 的气泡间距"></a></p>
+<p>为了探究 iMessage 的间距规则，如上图所示，简单推导出以下几个参数（未必准确）：</p>
+<ol>
+<li><p>点击发送按钮的时间：就是用户编辑完短信，点击发送按钮后，信息上屏的时间；</p>
+</li>
+<li><p>本地实际发出时间：信息上屏后，顶部 Navigation Bar 底部会有发送进度条，进度条走完并发出「嗖」一声代表实际发出信息。经实际测试，若在发送过程中进入飞行模式，这里会先读取<strong>点击发送按钮时间</strong>，待信息成功发出后，再更新实际发出时间；</p>
+</li>
+<li><p>间距：有「长间距」与「短间距」之分；</p>
+</li>
+<li><p>已送达状态：即对方设备接收到信息的状态。</p>
+</li>
+</ol>
+<blockquote>
+<p>注：</p>
+<ul>
+<li><p>左滑即可拉出<strong>本地实际发出时间</strong>；</p>
+</li>
+<li><p>「已读」时间对探究间距无甚帮助，因此不作分析。</p>
+</li>
+</ul>
+</blockquote>
+<p>得出结论：若 2 条消息的<strong>本地实际发出时间</strong>相隔<strong>大于等于</strong> 1 分钟，则增大气泡之间的间距。并非根据对方<strong>实际接收时间</strong>（已送达）来判断。</p>
+<p>为什么呢？</p>
+<h4 id="一切依从于内容"><a href="#一切依从于内容" class="headerlink" title="一切依从于内容"></a>一切依从于内容</h4><p>Apple 的 《<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html" target="_blank" rel="external">Human Interface Guidelines</a>》在最开头就讲述了自 iOS 7 以来扁平化的初衷：</p>
+<blockquote>
+<p><strong>Defer to Content</strong><br>Although crisp, beautiful UI and fluid motion are highlights of the iOS 7 experience, the user’s content is at its heart. </p>
+</blockquote>
+<p>聊天界面里，核心内容就是「信息」，其他内容都需要让步，但是让步不等于放弃，而是巧妙地把时间戳隐藏起来。</p>
+<p>隐藏时间戳后，缺少了「时间」这一辨识纬度，会增加用户的辨识内容的难度。用「间距」来暗示「时间差」简单且合理。</p>
+<p><strong>为什么是大于等于 1 分钟才增大间距？</strong></p>
+<p>这与用户的聊天行为有关。大家有没有试过，在围绕<strong>闲聊话题</strong>发表个人意见的时候，都是连环炮一样的发送「一句话信息」？这些密集的「碎片化信息」无需深思熟虑，因此通常都在极短时间内表达完毕，它们都是围绕某话题而展开的「同类信息」。</p>
+<p>根据「接近法则」，就应该把「同类信息」紧挨在一起。</p>
+<p>而那些经过深思熟虑或需要东拼西凑的内容，基本会超过 1 分钟时间，例如表白。</p>
+<p><strong>为什么只有 2 种间距？</strong></p>
+<p>多间距反而会增加辨识难度。线性地增加多种不同的间距，还不如直接平均地展示时间戳。</p>
+<p>2 种间距，刚刚好。</p>
+<h2 id="气泡的颜色"><a href="#气泡的颜色" class="headerlink" title="气泡的颜色"></a>气泡的颜色</h2><p><a href="http://7xigda.com1.z0.glb.clouddn.com/color-of-the-imessage.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/color-of-the-imessage.png" alt="iMessage 的气泡颜色"></a></p>
+<p>如上图所示，从上至下是由浅到深的过程，并且中间的线性渐变非常严谨。</p>
+<blockquote>
+<p>藏在箱底的老照片，随着时光流逝，慢慢褪色。<br>—— 达尔文</p>
+</blockquote>
+<p>iMessage 的气泡也一样，时间越久远（虽然只是一屏几百像素之隔），色彩就越淡。这正代表着 Jony Ive 的一贯态度——「True to the material」。</p>
+<p>另外，心理学里关于知觉的「选择性」也有相关阐述：对比度越高，对人的知觉刺激越大，即越容易吸引注意力。由于人对页面的扫视一般是从左上到右下，这与聊天界面的时间顺序相悖，高对比度可以让用户在切换页面后更快速地聚焦到最新信息上。</p>
+<p>以上都是一本正经的胡说八道，欢迎大家脑暴探讨。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/why-empty-states-deserve-more-design-time/" rel="next" title="[译文] 为什么空白状态值得设计">
+                <i class="fa fa-chevron-left"></i> [译文] 为什么空白状态值得设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ios-alert-view-and-action-sheet/" rel="prev" title="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
+                不要滥用对话框！细说 iOS Alert View 与 Action Sheet <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#气泡的间距"><span class="nav-number">1.</span> <span class="nav-text">气泡的间距</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一切依从于内容"><span class="nav-number">1.0.1.</span> <span class="nav-text">一切依从于内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#气泡的颜色"><span class="nav-number">2.</span> <span class="nav-text">气泡的颜色</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

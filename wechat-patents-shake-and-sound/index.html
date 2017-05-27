@@ -1,0 +1,743 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="￼ 在 2013 年 3 月左右，微信的「摇一摇」除了可以找人之外，还可以根据声音来识别歌曲。到了 2014 年 5 月前后，还加入了电视节目的识别功能。  一直对这个功能的实现很好奇，本周经过一番查找，终于找到了一个专利号为 CN201410605680.X 的专利《基于节目的交互方法和装置》。 专利简介： 申请(专利权)人：腾讯科技(深圳)有限公司 发明(设计)人：张小龙；张颖；胡仁杰；郑秋明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信摇一摇专利 - 基于节目的交互方法和装置">
+<meta property="og:url" content="http://yoursite.com/wechat-patents-shake-and-sound/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="￼ 在 2013 年 3 月左右，微信的「摇一摇」除了可以找人之外，还可以根据声音来识别歌曲。到了 2014 年 5 月前后，还加入了电视节目的识别功能。  一直对这个功能的实现很好奇，本周经过一番查找，终于找到了一个专利号为 CN201410605680.X 的专利《基于节目的交互方法和装置》。 专利简介： 申请(专利权)人：腾讯科技(深圳)有限公司 发明(设计)人：张小龙；张颖；胡仁杰；郑秋明">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-01.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-02.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-03.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-04.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-05.jpg">
+<meta property="og:updated_time" content="2015-11-30T00:05:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信摇一摇专利 - 基于节目的交互方法和装置">
+<meta name="twitter:description" content="￼ 在 2013 年 3 月左右，微信的「摇一摇」除了可以找人之外，还可以根据声音来识别歌曲。到了 2014 年 5 月前后，还加入了电视节目的识别功能。  一直对这个功能的实现很好奇，本周经过一番查找，终于找到了一个专利号为 CN201410605680.X 的专利《基于节目的交互方法和装置》。 专利简介： 申请(专利权)人：腾讯科技(深圳)有限公司 发明(设计)人：张小龙；张颖；胡仁杰；郑秋明">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/wechat-patents-shake-and-sound/"/>
+
+
+
+
+
+  <title>微信摇一摇专利 - 基于节目的交互方法和装置 | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/wechat-patents-shake-and-sound/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信摇一摇专利 - 基于节目的交互方法和装置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-11-30T07:37:29+08:00">
+                2015-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-01.png" alt="微信摇一摇识别歌曲">￼</a></p>
+<p>在 2013 年 3 月左右，微信的「摇一摇」除了可以找人之外，还可以根据声音来识别歌曲。到了 2014 年 5 月前后，还加入了电视节目的识别功能。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-02.png" alt="微信摇一摇识别电视节目"></a></p>
+<p>一直对这个功能的实现很好奇，本周经过一番查找，终于找到了一个专利号为 CN201410605680.X 的专利《基于节目的交互方法和装置》。</p>
+<h4 id="专利简介："><a href="#专利简介：" class="headerlink" title="专利简介："></a>专利简介：</h4><blockquote>
+<p>申请(专利权)人：腾讯科技(深圳)有限公司</p>
+<p>发明(设计)人：张小龙；张颖；胡仁杰；郑秋明；孙博；侯杰；谢达东；刘海龙</p>
+<p>申请日：2014.03.13</p>
+<p>公开(公告)日：2014.12.31</p>
+</blockquote>
+<h4 id="专利摘要："><a href="#专利摘要：" class="headerlink" title="专利摘要："></a>专利摘要：</h4><p>一种基于节目的交互方法，其特征在于，所述方法包括：</p>
+<ul>
+<li>在播放节目的过程中，获取所述节目的音频信息，所述音频信息包括所述节目的片段音频信息以及所述节目中插入的指定音频信息；</li>
+<li>生成所述音频信息的音频指纹；</li>
+<li>发送所述音频指纹，所述音频指纹用于匹配出节目信息；</li>
+<li>当接收到与所述节目信息对应的交互页面时，显示所述交互页面；</li>
+<li>基于在所述交互页面的互动操作，与所述节目进行交互。</li>
+</ul>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-03.jpg" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-03.jpg" alt="界面示意图"></a></p>
+<p>图 5A 是本发明实施例提供的功能选项界面示意图。<br>图 5B 是本发明实施例提供的摇动界面示意图。</p>
+<p>基于腾讯的强大研发实力，除了上面的专利简述外，专利书内还包含了从手机设备、后台服务器的所有软硬层面的结构与流程设计，全方位保护。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-04.jpg" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-04.jpg" alt="终端的结构示意图"></a></p>
+<p>图8是本发明实施例提供的一种终端的结构示意图； </p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-05.jpg" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/wechat-patents-05.jpg" alt="服务器的结构示意图">￼</a></p>
+<p>图9是本发明实施例提供的一种服务器的结构示意图。 </p>
+<p>这个专利案利用了「音频指纹」这个关键技术。关于音频指纹，<a href="http://baike.baidu.com/view/443399.htm" target="_blank" rel="external">百度百科</a>有比较简单的描述。与其有较高相关度的另外一个术语「声学指纹」，在<a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E5%AD%A6%E6%8C%87%E7%BA%B9" target="_blank" rel="external">维基百科</a>有更详尽的描述：</p>
+<blockquote>
+<p>声学指纹（Acoustic fingerprint）是通过特定算法从音频信号中提取的一段数字摘要，用于识别声音样本或者快速定位音频数据库中的相似音频。音频指纹是指可以代表一段音乐重要声学特征的基于内容的紧致数字签名，其主要目的是建立一种有效机制来比较两个音频数据的感知听觉质量。</p>
+</blockquote>
+<p>关于这个专利的保护范围，专利档案最后有这样的描述：</p>
+<blockquote>
+<p>以上所述仅为本发明的较佳实施例，并不用以限制本发明，凡在本发明的精神和原则之内，所作的任何修改、等同替换、改进等，均应包含在本发明的保护范围之内。</p>
+</blockquote>
+<p>意思就是，通过「音频指纹」可匹配除了歌曲和音频之外其他类型媒体，只要具有「同等精神和原则」，并且匹配到歌曲、电视节目后，后续所有交互方式均被保护。</p>
+<p>呵呵哒。</p>
+<p>可以看出来，无论是歌曲识别，还是节目识别，这个专利描述的都是基于「音频指纹」识别技术的一套较简单的交互流程，并未涉及到真正尖端的技术发明。我们可以从中学习到，除了发明新的轮子——研究「黑科技」之外，还可以利用现有的技术来匹配合适的使用场景，组合出各种新颖技术。</p>
+<p>以上。</p>
+<p>相关链接：</p>
+<ul>
+<li><a href="http://www.innojoy.com/patent/patent.shtml?docno=CN201410605680.X&amp;trsdb=fmzl" target="_blank" rel="external">基于节目的交互方法和装置</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%A3%B0%E5%AD%A6%E6%8C%87%E7%BA%B9" target="_blank" rel="external">声学指纹（Acoustic fingerprint） - 维基百科</a></li>
+<li><a href="http://baike.baidu.com/view/443399.htm" target="_blank" rel="external">音频指纹技术 - 百度百科</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/fake-it-till-you-make-it/" rel="next" title="总结 Prototyping: Fake It Till You Make It - WWDC 2014">
+                <i class="fa fa-chevron-left"></i> 总结 Prototyping: Fake It Till You Make It - WWDC 2014
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/allenzhang-product/" rel="prev" title="张小龙的产品哲学">
+                张小龙的产品哲学 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#专利简介："><span class="nav-number">1.</span> <span class="nav-text">专利简介：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#专利摘要："><span class="nav-number">2.</span> <span class="nav-text">专利摘要：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

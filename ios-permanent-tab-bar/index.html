@@ -1,0 +1,726 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content=" - iOS - Navigation," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="本文来自 知乎的一个问题  照旧先说结论： 切换成本。底部 Tab Bar 是否常驻，取决于该产品的内容或主要任务需要用户投入多少注意力。 我一直有思考这个问题，还是想不到完美的答案，抛砖引玉希望有内幕。 不过我跟题主想的刚好「相反」：我的疑问是，为什么 App Store、Instagram、Tumblr 这些 apps 都是常驻底部 Tab Bar 导航？ 题主的疑问：为什么知乎、微信非常驻">
+<meta name="keywords" content=" - iOS - Navigation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么中国很多app都不固定下面的tab（点到下一级页面就消失了）？">
+<meta property="og:url" content="http://yoursite.com/ios-permanent-tab-bar/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="本文来自 知乎的一个问题  照旧先说结论： 切换成本。底部 Tab Bar 是否常驻，取决于该产品的内容或主要任务需要用户投入多少注意力。 我一直有思考这个问题，还是想不到完美的答案，抛砖引玉希望有内幕。 不过我跟题主想的刚好「相反」：我的疑问是，为什么 App Store、Instagram、Tumblr 这些 apps 都是常驻底部 Tab Bar 导航？ 题主的疑问：为什么知乎、微信非常驻">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-01.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-02-wechat.png">
+<meta property="og:updated_time" content="2015-09-21T06:48:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为什么中国很多app都不固定下面的tab（点到下一级页面就消失了）？">
+<meta name="twitter:description" content="本文来自 知乎的一个问题  照旧先说结论： 切换成本。底部 Tab Bar 是否常驻，取决于该产品的内容或主要任务需要用户投入多少注意力。 我一直有思考这个问题，还是想不到完美的答案，抛砖引玉希望有内幕。 不过我跟题主想的刚好「相反」：我的疑问是，为什么 App Store、Instagram、Tumblr 这些 apps 都是常驻底部 Tab Bar 导航？ 题主的疑问：为什么知乎、微信非常驻">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/ios-permanent-tab-bar/"/>
+
+
+
+
+
+  <title>为什么中国很多app都不固定下面的tab（点到下一级页面就消失了）？ | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/ios-permanent-tab-bar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">为什么中国很多app都不固定下面的tab（点到下一级页面就消失了）？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T08:55:15+08:00">
+                2015-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文来自 <a href="http://www.zhihu.com/question/32087171/answer/54598364" target="_blank" rel="external">知乎的一个问题</a></p>
+</blockquote>
+<p>照旧先说结论：</p>
+<p><strong>切换成本。</strong>底部 Tab Bar 是否常驻，取决于该产品的内容或主要任务需要用户投入多少注意力。</p>
+<p>我一直有思考这个问题，还是想不到完美的答案，抛砖引玉希望有内幕。</p>
+<p>不过我跟题主想的刚好「相反」：<br>我的疑问是，为什么 App Store、Instagram、Tumblr 这些 apps 都是常驻底部 Tab Bar 导航？</p>
+<p>题主的疑问：为什么知乎、微信非常驻？</p>
+<p>按我理解，这都与成本有关。</p>
+<h2 id="常驻底部的-Tab-Bar"><a href="#常驻底部的-Tab-Bar" class="headerlink" title="常驻底部的 Tab Bar"></a>常驻底部的 Tab Bar</h2><p>App Store、Instagram、Tumblr 这些都是常驻底部 Tab Bar 导航。它们无一例外都是属于「轻量级」的 apps，这里的「轻量」指的是任务的「轻量」，内容的「轻量」——用户基本只需要在一级页面就能完成主要任务，或者阅读主要内容，而且切换 tabs 不会对用户的当前任务造成太大影响，保留了任务现场，切换回来之后还可以继续之前的任务。</p>
+<p>切换成本非常低甚至为零。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-01.png" alt="App Store 的「探索」tab"></a></p>
+<p>如上图所示，路径：</p>
+<pre><code>进入 App Store 的 探索 → 附近的热门 App → 显示全部
+</code></pre><p>此时已经进入一个二级页面，你可以切换到别的底部 tabs 来进行搜索、更新之类的其他任务，然后再点击「探索」tab，它还会停留在「全部附近的热门 App」二级页面，而且可以再次点击「探索」tab 返回一级页面。</p>
+<h4 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h4><p>用户对「聊天」和「公众号内容」的依赖程度不尽相同，微信来让用户自行取舍，它在设置里面提供了「微信运行时是否需要声音/振动通知」。</p>
+<p>有的用户喜欢聊天，不太在意公众号内容，那 ta 可以把提醒打开，有通知了就切回去聊天，想读的时候再切换回来，而且，微信公众号能记住用户的阅读进度（保留任务现场），切换回内容详情页后会跳转至离开时的阅读进度，配合缓存机制，切换成本非常低。</p>
+<p>其实，可能还有历史遗留问题，微信一开始是没有公众号和朋友圈的。不过，个人认为微信的 tabs 还是不要常驻底部好。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-02-wechat.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/tab-bar-02-wechat.png" alt="微信"></a></p>
+<h4 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h4><p>对于绝大部分用户来说，知乎的「私信」不是高频行为吧？这个真不太了解，反正本人很少私信，要私聊都直接加微信或者微博算了。</p>
+<p>知乎主打就是优质内容，需要「重读」、「深读」，私信的确会造成一定的干扰，但是也有推送消息设置，可关掉私信提醒。</p>
+<p>当然，希望知乎会有更好的缓存机制，配合阅读进度的记录，会得到更好的体验。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS-Navigation/" rel="tag">#  - iOS - Navigation</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/the-key-of-analysis-for-competitive-products/" rel="next" title="竞品分析的关键">
+                <i class="fa fa-chevron-left"></i> 竞品分析的关键
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/why-empty-states-deserve-more-design-time/" rel="prev" title="[译文] 为什么空白状态值得设计">
+                [译文] 为什么空白状态值得设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常驻底部的-Tab-Bar"><span class="nav-number">1.</span> <span class="nav-text">常驻底部的 Tab Bar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#微信"><span class="nav-number">1.0.1.</span> <span class="nav-text">微信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#知乎"><span class="nav-number">1.0.2.</span> <span class="nav-text">知乎</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

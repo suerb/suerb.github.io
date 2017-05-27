@@ -1,0 +1,778 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
+<meta property="og:url" content="http://yoursite.com/ios-alert-view-and-action-sheet/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？对">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert02.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert03.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert04.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert05.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert06.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert08.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert07.png">
+<meta property="og:updated_time" content="2015-09-21T06:54:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
+<meta name="twitter:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？对">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/ios-alert-view-and-action-sheet/"/>
+
+
+
+
+
+  <title>不要滥用对话框！细说 iOS Alert View 与 Action Sheet | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/ios-alert-view-and-action-sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">不要滥用对话框！细说 iOS Alert View 与 Action Sheet</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T09:28:27+08:00">
+                2015-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>来自<a href="http://www.zhihu.com/question/35141228/answer/61369322" target="_blank" rel="external">知乎的一个问题</a></p>
+</blockquote>
+<p>在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" alt="左图的 Alert 是搞笑的，不要学，右图为 Action Sheet"></a></p>
+<h2 id="被混淆并滥用的-Alert"><a href="#被混淆并滥用的-Alert" class="headerlink" title="被混淆并滥用的 Alert"></a>被混淆并滥用的 Alert</h2><p>根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。</p>
+<p>那么问题来了：问题的严重程度如何判断？谁说了算？对于产品利益方来说，任何问题都是严重的，为了最大可能地留住用户，连取消关注都要弹个对话框。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" alt="反例：陌陌加好友，网易云音乐删除私信，印象笔记评价引导"></a></p>
+<blockquote>
+<p>左图：陌陌加个好友都要用 Alert。陌陌看似为了帮助用户完成目标任务（在陌陌加通讯录好友），其实是为了满足自己的业务目标——对方没装陌陌时，通过短信送达「好友邀请」来拉新。产品利益方觉得你加不到好友，问题很严重，短信骚扰反而不算是事儿。</p>
+<p>中图：网易云音乐删私除信。其实，左滑展示「删除」按钮是第一步，再点击「删除」按钮其实已经等于二次确认了，无需再 Alert 进行 3 次确认；</p>
+<p>右图：Evernote 的评价引导，貌似是 Twitter 发明的，呵呵。</p>
+</blockquote>
+<p>还有各种各样的原因导致 Alert 被滥用：功能拥挤导致界面无法合理承载有效信息，只能靠弹窗提示用户；抢夺用户稀缺的注意力；产品设计师偷懒等等。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" alt="反例：微信的举报与选图组件"></a></p>
+<blockquote>
+<p>左图：微信的举报功能，当提交时遇到未填项则弹窗提示。若判断到有未填项，是否可以禁用「提交」按钮？或者在未填栏目附近的界面上作出反馈提示？总比随便弹个对话框要好。（新版已修正）</p>
+<p>右图：微信选图组件，每次选择达到上限时均弹窗提示，是否能直接展示 9/9 这样的「已选数/上限数」形式，然后禁用选中按钮。即使是为了让老年人更好地理解，也只需要提示 1 次，即可达到教育目的。</p>
+</blockquote>
+<p>很多情况下，其实应该用 Action Sheet，而非 Alert。最重要的判断原则是，用户主动发起的任务使用 Action Sheet，否则使用 Alert。</p>
+<p>在深入了解细节之前，不妨先看看下图，领会一下两者的区别。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" alt="Alert 与 Action Sheet 的关系"></a></p>
+<h2 id="1-Alert"><a href="#1-Alert" class="headerlink" title="1. Alert"></a>1. Alert</h2><p>Alert 作为一个占据屏幕中央的临时模态层，会严重打断用户的当前任务与操作，吸引用户所有注意力。因此，Apple 严肃地建议：尽量避免使用。</p>
+<p>Apple 还阐述了一个重要原则：在界面内能表达的信息，就不要使用 Alert。本人理解的另一层意思就是说，如果某些信息在界面上都表达不清晰、不完整，肯定是功能有问题，或是设计有问题，也许，两者都有问题？这些就不是 Alert 能解决的了。</p>
+<p> 本人总结了一下，Alert 适用于以下场景。</p>
+<h4 id="1-1-辅助完成任务时使用-Alert"><a href="#1-1-辅助完成任务时使用-Alert" class="headerlink" title="1.1 辅助完成任务时使用 Alert"></a>1.1 辅助完成任务时使用 Alert</h4><p>用户在任务的某个关键位置，遇到他们不能解决的严重问题、需要进行某些抉择，或补充某些信息才能让任务进行下去。例如引导用户允许使用各种系统权限，或验证密码等。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" alt="FYUSE"></a></p>
+<blockquote>
+<p>FYUSE 登录时识别到此邮箱尚未注册导致无法登录，就使用 Alert 来咨询用户是否需要用此邮箱直接注册，这也是尊重用户意愿的表现。</p>
+</blockquote>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" alt="微信与 App Store"></a></p>
+<blockquote>
+<p>左图：最常见的权限申请引导，不同意的话就无法正常使用某些功能，因此会详细说明。</p>
+<p>中图、右图：某些涉及隐私或者财产安全的任务中途，让用户在不脱离场景的情况下，填写密码验证个人信息，然后进入相关隐私页面。</p>
+</blockquote>
+<h4 id="1-2-提供某些必须引起用户重视的信息时使用-Alert"><a href="#1-2-提供某些必须引起用户重视的信息时使用-Alert" class="headerlink" title="1.2 提供某些必须引起用户重视的信息时使用 Alert"></a>1.2 提供某些必须引起用户重视的信息时使用 Alert</h4><p>某些情况必须引起用户重视，例如网落连接失败、低电量提示等无可避免的非人为因素。<br>（低电量提示在 iOS 9 已改为含有「低电量模式」选项的 Alert 了，iOS 9 之前只有一个「好」…无图）</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" alt="微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到"></a></p>
+<blockquote>
+<p>微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到</p>
+</blockquote>
+<h2 id="2-Action-Sheet"><a href="#2-Action-Sheet" class="headerlink" title="2. Action Sheet"></a>2. Action Sheet</h2><p>关于 Action Sheet，Apple HIG 官方定义了以下用途：</p>
+<h4 id="2-1-完成任务的不同方法"><a href="#2-1-完成任务的不同方法" class="headerlink" title="2.1 完成任务的不同方法"></a>2.1 完成任务的不同方法</h4><p>在同一场景下，Action Sheet 提供了可以完成任务的一系列方法，或者对某一目标提供多种操作手段。另一个优点是更加节省界面空间。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" alt="Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程"></a></p>
+<blockquote>
+<p>Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程</p>
+</blockquote>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" alt="Apple Music 把 Action Sheet 玩出了花"></a></p>
+<blockquote>
+<p>Apple Music 把 Action Sheet 玩出了花</p>
+</blockquote>
+<h4 id="2-2-完成高危操作时，征求用户的二次确认"><a href="#2-2-完成高危操作时，征求用户的二次确认" class="headerlink" title="2.2 完成高危操作时，征求用户的二次确认"></a>2.2 完成高危操作时，征求用户的二次确认</h4><p>这是很多设计师（包括我自己）都经常混淆的一个要点。当用户的下一步操作，与当前任务的主要目标不符，或是被用户主动中断等含有潜在风险的操作时，应该使用 Action Sheet，而非 Alert。如果需要，可以与第 1 点一样，为用户提供若干替代方案。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" alt="iOS 删除相簿、联系人都只使用了 Action Sheet"></a></p>
+<blockquote>
+<p>iOS 删除相簿、联系人都只使用了 Action Sheet</p>
+</blockquote>
+<p>Evernote 提供了保存草稿的替代方案，但并不是所有产品都支持草稿。</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" alt="Evernote 编辑笔记时点击取消，也只调用了 Action Sheet"></a></p>
+<blockquote>
+<p>Evernote 编辑笔记时点击取消，也只调用了 Action Sheet</p>
+</blockquote>
+<p>下面的为错误使用的反例：</p>
+<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" alt="Apple Beta 的 Feedback 与微信、QQ的任务中断确认"></a></p>
+<blockquote>
+<p>Apple Beta 的 Feedback 与微信、QQ的任务中断确认</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>就像抗生素一样，只要滥用，就会失效。引用 Apple 来结尾：</p>
+<blockquote>
+<p>The infrequency with which alerts appear helps users take them seriously. Be sure to minimize the number of alerts your app displays and ensure that each one offers critical information and useful choices.</p>
+<p>合理低频地使用 Alert，用户才会把它当作一回事。请严格控制应用的 Alert 数量，并确保每一个都用得其所。</p>
+<p>—— Apple <ios human="" interface="" guideline=""></ios></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/the-color-of-imessage/" rel="next" title="iMessage 会话气泡的魔鬼细节">
+                <i class="fa fa-chevron-left"></i> iMessage 会话气泡的魔鬼细节
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/scroll-past-end-for-code/" rel="prev" title="Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果">
+                Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#被混淆并滥用的-Alert"><span class="nav-number">1.</span> <span class="nav-text">被混淆并滥用的 Alert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Alert"><span class="nav-number">2.</span> <span class="nav-text">1. Alert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-辅助完成任务时使用-Alert"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.1 辅助完成任务时使用 Alert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-提供某些必须引起用户重视的信息时使用-Alert"><span class="nav-number">2.0.2.</span> <span class="nav-text">1.2 提供某些必须引起用户重视的信息时使用 Alert</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Action-Sheet"><span class="nav-number">3.</span> <span class="nav-text">2. Action Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-完成任务的不同方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">2.1 完成任务的不同方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-完成高危操作时，征求用户的二次确认"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.2 完成高危操作时，征求用户的二次确认</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

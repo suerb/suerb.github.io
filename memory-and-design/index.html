@@ -1,0 +1,894 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic|Lato, "PingFang SC", "Microsoft YaHei", sans-serif:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="多图预警，4000 字长文。  在进入主题之前，让我们先来看看一道题目。  假设你是一名公共汽车司机。在第一站上来 6 个男人和 2 个女人，在第二站 2 个男人下车，1 个女人上车。在第三站 1 个男人下车，2 个女人上车。在第四站 3 个男人上车，3 个女人下车。在第五站，2 个男人下车，3 个男人上车，1 个女人下车，2 个女人上车。  . . . . . . . . . . . . .">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记忆与设计">
+<meta property="og:url" content="http://yoursite.com/memory-and-design/index.html">
+<meta property="og:site_name" content="产品实验室">
+<meta property="og:description" content="多图预警，4000 字长文。  在进入主题之前，让我们先来看看一道题目。  假设你是一名公共汽车司机。在第一站上来 6 个男人和 2 个女人，在第二站 2 个男人下车，1 个女人上车。在第三站 1 个男人下车，2 个女人上车。在第四站 3 个男人上车，3 个女人下车。在第五站，2 个男人下车，3 个男人上车，1 个女人下车，2 个女人上车。  . . . . . . . . . . . . .">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14923989018267.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924228353420.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931912245248.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931912431689.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931928148642.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931928327667.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931912614961.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931100121277.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924133805342.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924170627033.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931913305382.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931913656743.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931913964578.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931104069663.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931104199484.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931104280185.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931914305734.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931914545339.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931105777418.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931914811003.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931914961831.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931915091982.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924410011385.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931915325442.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924412855460.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924412966423.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931915517191.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931915687820.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14932585064531.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14924417655650.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931116549675.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931116858152.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/心理模型-相册2.gif">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/iOS-dialog-出错摇晃提示.gif">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931916111997.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/14931916243579.jpg">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/hipmunk.gif">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/逻辑-appstore.gif">
+<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/肌肉记忆.gif">
+<meta property="og:updated_time" content="2017-05-03T23:35:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记忆与设计">
+<meta name="twitter:description" content="多图预警，4000 字长文。  在进入主题之前，让我们先来看看一道题目。  假设你是一名公共汽车司机。在第一站上来 6 个男人和 2 个女人，在第二站 2 个男人下车，1 个女人上车。在第三站 1 个男人下车，2 个女人上车。在第四站 3 个男人上车，3 个女人下车。在第五站，2 个男人下车，3 个男人上车，1 个女人下车，2 个女人上车。  . . . . . . . . . . . . .">
+<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/14923989018267.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/memory-and-design/"/>
+
+
+
+
+
+  <title>记忆与设计 | 产品实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">产品实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">思考 总结 笔记</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/memory-and-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许可君.Suer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="产品实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记忆与设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-27T02:27:56+08:00">
+                2017-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>多图预警，4000 字长文。</p>
+</blockquote>
+<p>在进入主题之前，让我们先来看看一道题目。</p>
+<blockquote>
+<p>假设你是一名公共汽车司机。在第一站上来 6 个男人和 2 个女人，在第二站 2 个男人下车，1 个女人上车。在第三站 1 个男人下车，2 个女人上车。在第四站 3 个男人上车，3 个女人下车。在第五站，2 个男人下车，3 个男人上车，1 个女人下车，2 个女人上车。</p>
+</blockquote>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>问题来了：</p>
+<blockquote>
+<p>公交车司机叫什么名字？</p>
+</blockquote>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14923989018267.jpg" alt="怎么回事"></p>
+<p>这道题体现了记忆过程的一些基本特征。</p>
+<p>我将在接下来的内容中，简单的介绍一下人类记忆的过程与一些设计原理之间的关系。</p>
+<h3 id="0-记忆的过程"><a href="#0-记忆的过程" class="headerlink" title="0. 记忆的过程"></a>0. 记忆的过程</h3><p>人类的记忆过程可以划分为 3 个阶段：</p>
+<ol>
+<li>编码（encoding）</li>
+<li>存储（storage）</li>
+<li>提取（retrieval）</li>
+</ol>
+<p>其中，编码是通过各种感觉系统来接受信息，并进行初步加工的过程，总的来说就是关于人类如何感知这个世界的方法。百万年来，人类进化出了几种可以帮助我们更好地活下去的心理特征。</p>
+<p>我们就从编码过程的三个基本特征开始。</p>
+<h3 id="1-记忆过程的第一步：编码"><a href="#1-记忆过程的第一步：编码" class="headerlink" title="1. 记忆过程的第一步：编码"></a>1. 记忆过程的第一步：编码</h3><p>这是我们公司洗手间的推广位，大家能快速看到哪些文字呢？</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924228353420.jpg" alt="洗手间墙上的推广位"></p>
+<p>这是我们公司洗手间的推广位，大家看看有什么问题？</p>
+<p>在这张推广图中，正文的文字被复杂的背景图所干扰，变得难以阅读。在这个场景这个时刻，每次看到都让我很纠结。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931912245248.jpg" alt="隔壁同学"></p>
+<p>上图这个界面呢，又有什么问题？</p>
+<p>同样地，这个界面的主体应该是用户发布的内容，但也许是为了渲染气氛，加入了表意不明的背景图和花边纹理，抢夺了用户的大量注意力资源。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931912431689.jpg" alt="美妆嘉人"></p>
+<p>上图是进入某个 app 后，首屏都还没加载完，马上看到的空前绝后的新手引导。用户本来可以好好的浏览内容，逐步了解这个产品的价值，然而这个引导的字比首页的字还多……</p>
+<p>通过上面的例子，我想告诉大家的是，人的注意力资源是非常有限的。上面的界面被人为地制造了大量干扰，耗费了过多注意力资源，让我们难以获取关键信息。</p>
+<h4 id="1-1-编码过程的基本特征：人类的注意力资源非常有限"><a href="#1-1-编码过程的基本特征：人类的注意力资源非常有限" class="headerlink" title="1.1 编码过程的基本特征：人类的注意力资源非常有限"></a>1.1 编码过程的基本特征：人类的注意力资源非常有限</h4><p>有限到什么程度？请看图。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931928148642.jpg" alt="效果图"></p>
+<p>你以为用户看到的是上面的样子，其实是用户的清晰视野只有下面的区域。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931928327667.jpg" alt="真实的可视区域"></p>
+<p>怎样度量这个核心区域？你可以把手臂往前方伸直，然后朝上伸出拇指，你能看到的拇指指甲大小约等于人眼分辨率最高的区域，范围之外的分辨率成指数级下降，边缘区域甚至只有相当于屏幕上的几个像素。</p>
+<p>既然注意力资源这么有限，我们在设计上应该怎么做呢？</p>
+<p>我们在开始设计之前，要思考用户在每个界面的核心目标，不添加任何多余的元素，避免干扰用户。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931912614961.jpg" alt="iOS 验证密码"></p>
+<p>这是验证 Apple ID 的第一步，需要用户输入 iPhone 的解锁密码。由于输入密码是一个需要耗费大量注意力资源的行为，整个界面真正做到了毫无干扰。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931100121277.jpg" alt="macOS 桌面"></p>
+<p>既然注意力那么稀缺，为什么上图又不只显示一个窗口呢？因为当前这个场景，用户需要的是多窗口多任务联动，因此只能够通过其他方法来突出重点。这里使用了合理的视觉层级关系，让我们可以快速捕捉到上方的窗口就是当前的主体。</p>
+<h4 id="1-2-编码过程的基本特征：填补遗漏的倾向"><a href="#1-2-编码过程的基本特征：填补遗漏的倾向" class="headerlink" title="1.2 编码过程的基本特征：填补遗漏的倾向"></a>1.2 编码过程的基本特征：填补遗漏的倾向</h4><p>我们再看下方的这一组图，能否识别出分别是什么东西？</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924133805342.jpg" alt="格式塔的闭合与连续"></p>
+<p>我们的大脑其实是很「先进」的，可以自动填充那些没闭合的事物，也可以把不连续的东西连起来，把它们看做一个整体。上图中的熊猫，我们不会看成是一堆黑色色块，右边的两条相交的曲线，也不会成是一堆小点。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924170627033.jpg" alt="IMB logo；Dribbble 某图"></p>
+<p>我们可以利用人类这种自动「补漏」、自动「缝合」的心理特征，来减少界面上的部分元素。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931913305382.jpg" alt="涂手"></p>
+<p>上图是涂手的作品详情页，通过边缘的切割，和右侧、下侧的阴影处理，就可以让我们感知道是一个正方形的画布容器。</p>
+<p>通过这个心理特征，还以用来拓展屏幕的有限空间。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931913656743.jpg" alt="App Store"></p>
+<p>只露出内容的一部分，就可以让用户感知到后续有更多的内容，突破了屏幕的限制，也节省了版面空间。</p>
+<h4 id="1-3-编码过程的基本特征：分组的倾向"><a href="#1-3-编码过程的基本特征：分组的倾向" class="headerlink" title="1.3 编码过程的基本特征：分组的倾向"></a>1.3 编码过程的基本特征：分组的倾向</h4><p>我先说一个假的故事……</p>
+<p>一个美女要我马上去跟她吃饭，我开心得要死，立刻去乘坐宇宙最快的交通工具——地铁。刚走到地铁门口，看到这样一个指引，马上一脸懵逼。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931913964578.jpg" alt=""></p>
+<p>大家能快速辨识到哪边是进站，哪边是出站么？</p>
+<p>好不容易来到了商场电梯，一看……</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931104069663.jpg" alt=""></p>
+<p>当我悄悄地按下了两个按钮之后，美女电话来了，她说你来这么晚，不吃了，直接来我房间吧，房间号是 114。美女就如救世主一样把我从电梯口拉了回来。</p>
+<p>然后我兴冲冲的跑到一楼酒店入口，准备看看 114 号房在哪里……</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931104199484.jpg" alt=""></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931104280185.jpg" alt=""></p>
+<p>为什么看到刚刚几张图，我们会觉得很别扭甚至无法理解呢？</p>
+<p>因为人是有将事物分组的倾向，刚刚看到的都是分组不合理的例子。那应该怎么分组才合理呢？我们先来做个小实验。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931914305734.jpg" alt="不同颜色、大小的圆"></p>
+<p>在上图中，在进行数量计算之前，有的同学可能会根据颜色来把圆分组，有点同学可能会根据大小来分组。但是应该很少同学会直接一个一个数。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931914545339.jpg" alt="分好组的圆"></p>
+<p>如上图所示，经过一定方式的排列之后，我们会更容易计算圆的数量。这就反映了一个问题，为什么我们更容易感知有一定规律的事物？</p>
+<p>百万年前，我们的祖先为了更好地理解事物，逐渐学会在复杂之中寻找规律，从而进化成为一种基本信息加工本能。这就是人类将事物分组的倾向。</p>
+<p>我们倾向于把位置上靠近的物体看成一组，也倾向于把形状、颜色、运动方向相似的物体看成一组。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931105777418.jpg" alt=""></p>
+<p>回头看看一些设计得很不错的案例，你会发现，把组分好也是一种技术活。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931914811003.jpg" alt="白云机场"></p>
+<p>把界面元素按照不同的特征来排列，可以帮助用户更快识别，节省了大量注意力资源。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931914961831.jpg" alt="燃兔"></p>
+<p>上面就是一些与记忆编码过程相关的特征。大家看看下图的界面应用了哪些特征和设计方法？</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931915091982.jpg" alt="tribe 的短信验证界面"></p>
+<h3 id="2-记忆过程的第二步：储存"><a href="#2-记忆过程的第二步：储存" class="headerlink" title="2. 记忆过程的第二步：储存"></a>2. 记忆过程的第二步：储存</h3><p>信息在经过识别加工后，就会进入到我们大脑的储存区域。按照时效来区分，记忆分为两种——短时记忆和长时记忆。</p>
+<p>在继续下去之前，大家先回答两个问题。</p>
+<blockquote>
+<ol>
+<li>人类记忆的编码过程，有哪几种认知倾向？</li>
+<li>刚刚地铁站入口的图里面，地铁站的墙壁是什么颜色？</li>
+</ol>
+</blockquote>
+<p>我相信有大部分同学回答不出来。上面的东西也不是很多，只有 3 个概念、1 种颜色，距离我介绍完也就相隔几分钟，为什么还是记不住全部东西？</p>
+<p>有没有试过，接了个电话后，忘记接电话前在做啥；谈话过程中被打断，回头发现忘记谈到哪里；正在进行复杂的数字运算，被打断后需要重新计算。</p>
+<p>被忘记的东西，是因为被储存到容量极小、极其不稳定、时效最短几秒最长仅有 2 分钟的<strong>短时记忆</strong>里面。</p>
+<p>而应该有些同学能记住部分甚至全部概念，为什么呢？</p>
+<p>因为他们之前有了解过这些相关概念，或者他们在听的时候有下意识地不断复述，在不断复述的过程中，这些短时记忆就会转变为<strong>长时记忆</strong>。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924410011385.jpg" alt="短时记忆与长时记忆，及其转变"></p>
+<blockquote>
+<p>短时记忆是依靠不断复述来转变成长时记忆。</p>
+</blockquote>
+<p>长时记忆也有自己的弱点：</p>
+<ul>
+<li>易出错，就像高压缩比的图像，解释度不高，提取之后很零散、模糊，例如「提笔忘字」；</li>
+<li>受情绪影响，伤心、生气等情绪激动的时候，短时记忆最容易变成长期记忆，特别是女性；</li>
+<li>追忆时可被改变，经常记错别人的事情发生在自己身上。</li>
+</ul>
+<blockquote>
+<p>这里要注意的是，短时记忆是各种感官接收到的感觉，还有各种注意现象的集合，如果不转变成长时记忆，就会消失。短时记忆并不是从长期记忆里提取出来的缓存。</p>
+</blockquote>
+<p>既然短时记忆那么不稳定，我们在设计上又可以做些什么呢？</p>
+<h4 id="2-1-清晰的流程与反馈"><a href="#2-1-清晰的流程与反馈" class="headerlink" title="2.1 清晰的流程与反馈"></a>2.1 清晰的流程与反馈</h4><p>首先，还是得明确用户目标，特别是在包含多步操作的交互流程中，提供清晰的任务流程和反馈。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931915325442.jpg" alt="Town 的注册流程-1"></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924412855460.jpg" alt="Town 的注册流程-2"></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924412966423.jpg" alt="Town 的注册流程-3"></p>
+<h4 id="2-2-记住用户的选择"><a href="#2-2-记住用户的选择" class="headerlink" title="2.2 记住用户的选择"></a>2.2 记住用户的选择</h4><p>其次，我们要记住用户的选择，减少用户的记忆负担。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931915517191.jpg" alt="喜马拉雅 FM 记住了我的上次登录方式"></p>
+<p>喜马拉雅 FM 记住了我的上次登录方式。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931915687820.jpg" alt="京东可实时同步购物车选中状态-1"></p>
+<p>京东的购物车，除了会提醒我商品降价之外，还会记住购物车的选中状态，而且多端实时同步。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14932585064531.jpg" alt="京东可实时同步购物车选中状态-2"></p>
+<p>我自己经常遇到一个情况，就是在某些 apps 里面操作的时候被打断，回来之后就不知道在做什么了。我也会担心自己设计出这样的产品，因此我想到一个土办法，来验证自己的设计是否清晰高效。</p>
+<blockquote>
+<p>在设计任务的关键页面的时候，假设此时收到一条重要的微信，然后你去微信，回复该消息后，再回来这个页面，还知道这个页面是干嘛的么？</p>
+</blockquote>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14924417655650.jpg" alt="假微信"></p>
+<p>当短时记忆转变为长时记忆之后，储存过程就结束了。在有需要的时候，外界的刺激或者我们自己都可以把长时记忆回忆出来，这就是我们记忆的提取阶段。</p>
+<h3 id="3-记忆过程的第三步：提取"><a href="#3-记忆过程的第三步：提取" class="headerlink" title="3. 记忆过程的第三步：提取"></a>3. 记忆过程的第三步：提取</h3><p>看到张学友，你们第一时间会想起什么？</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931116549675.jpg" alt=""></p>
+<p>有人会想起他的歌和演唱会，有人会想起他的广告，有人会想起他的电影，我只会想起他的表情包。为啥呢？这是因为每个人都有不同的心理模型。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931116858152.jpg" alt=""></p>
+<blockquote>
+<p>心理模型：人们对世界的认知和处事的经验，受教育、家庭、社会环境等因素影响，不同的人，会有不同的心理模型。可以说是各种长时记忆的合集。</p>
+</blockquote>
+<p>我们一直期望用户在使用我们产品的时候，把主要任务流程都烂熟于心，但除非是高频的需求，否则用户不可能经常使用我们的产品，因此他们对我们的产品的了解，也仅储存在短时记忆里面。</p>
+<p>因此，在产品设计当中，需要思考如何帮助用户更好地理解和记住我们的功能与流程。</p>
+<h4 id="3-1-符合目标用户的心理模型"><a href="#3-1-符合目标用户的心理模型" class="headerlink" title="3.1 符合目标用户的心理模型"></a>3.1 符合目标用户的心理模型</h4><p>首先，我们要找出目标用户，然后所有的设计都要符合该用户群的心理模型，让该用户群更容易理解和记忆我们的产品功能或流程。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/心理模型-相册2.gif" alt="心理模型 - iOS 相册"></p>
+<p>上图是 iOS 相册查看大图的功能，我们可以通过很自然的拿捏手势来缩放图像，而且图片的展开和收起都在同一个位置上，哪里来哪里去，符合了全球人民的世界观和人生观，真正做到了普适设计。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/iOS-dialog-出错摇晃提示.gif" alt="iOS-dialog-出错摇晃提示"></p>
+<p>上图是 iOS 系统的登录框，在输错密码之后，他会用拟人的手法来模拟错误提示，就像在摇头一样。据我了解，全球好像只有一个种族的摇头不是表达否定的意思。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931916111997.jpg" alt="航班信息在 iOS 信息 app 中的呈现方式"></p>
+<p>上图是一个航班细节的信息，非常难以识别和提取。人类进化了上百万年，但文字的心理模型仅存在数千年，因此文字阅读并不是自然的，而是靠后天不断练习而成的心理模型。因此，纯文字的表述让用户难以储存和提取。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/14931916243579.jpg" alt="航班信息在飞猪中的呈现方式"></p>
+<p>通过优化排版布局后，会比纯文字更容易识别，但是也不太利于记忆的提取。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/hipmunk.gif" alt="Hipmunk Travel 的航班选择"></p>
+<p>这个界面与前面的相比，更容易识别和提取，因为它通过各种图形化元素来表达关键信息，并且通过拖动操作来代替文字输入和点按选择。图形跟自然手势都是比较通用的心理模型。</p>
+<h4 id="3-2-符合逻辑"><a href="#3-2-符合逻辑" class="headerlink" title="3.2 符合逻辑"></a>3.2 符合逻辑</h4><p>另外一方面，有很多新的新创意，用户都没有见过，所以没有任何可用的心理模型。那为了让用户更容易理解，这些创意必须符合逻辑。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/逻辑-appstore.gif" alt="逻辑-appstore"></p>
+<p>上图的界面跳转、多选操作在我们现在看来最平常不过，但是对于刚开始接触智能手机操作系统的人来说是全新的东西，页面从边缘滑入、多选的操作、状态的实时变化，在现实世界中不存在这样的模式。页面前进、返回的动效是相呼应的，操作和反馈是对得上的，这就符合了基本的逻辑，用户也容易理解和记忆。</p>
+<h4 id="3-3-稳定的最简路径"><a href="#3-3-稳定的最简路径" class="headerlink" title="3.3 稳定的最简路径"></a>3.3 稳定的最简路径</h4><p>有一个经典的心理学案例，有一个人，上班的时候一直走了远路，后来另外一个人告诉他有一条捷径，但是他第二天还是走了远路，那个人就问他为什么，他回答说「<strong>我赶时间，所以我走了远路</strong>」。为了节省注意力资源，也为了减少犯错的机会，人类倾向于使用那些更省力的方法。</p>
+<p>这就带给了我们一个启示，就是在设计任务流程的时候，要优先保证任务路径的稳定，然后把各个流程节点简单化。这里用的是「最简」而不是「最短」，是避免大家把很多东西放在同一个流程上，就觉得让用户走了捷径。</p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/肌肉记忆.gif" alt="肌肉记忆"></p>
+<p>在我关闭朋友圈之后的一段时间，我还是习惯性的会去打开朋友圈。然后，我点错了入口。</p>
+<p>稳定的最简路径，在不断重复后，可直接转化为肌肉记忆。我觉得做产品做设计的终极目标，就是要让关键功能都变成肌肉记忆。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上就是记忆过程与设计之间的一些关系。</p>
+<p>其实很多原理大家都知道，我只是用心理学上的一些特征，来告诉大家这些设计原理背后的原因，加深大家的理解。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/paul_rand_conversations_with_students/" rel="next" title="《设计是什么》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《设计是什么》读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="许可君.Suer" />
+          <p class="site-author-name" itemprop="name">许可君.Suer</p>
+           
+              <p class="site-description motion-element" itemprop="description">无法描述</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/suer/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://7xigda.com1.z0.glb.clouddn.com/2017-05-25-115507.jpg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-记忆的过程"><span class="nav-number">1.</span> <span class="nav-text">0. 记忆的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-记忆过程的第一步：编码"><span class="nav-number">2.</span> <span class="nav-text">1. 记忆过程的第一步：编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-编码过程的基本特征：人类的注意力资源非常有限"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 编码过程的基本特征：人类的注意力资源非常有限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-编码过程的基本特征：填补遗漏的倾向"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 编码过程的基本特征：填补遗漏的倾向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-编码过程的基本特征：分组的倾向"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 编码过程的基本特征：分组的倾向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-记忆过程的第二步：储存"><span class="nav-number">3.</span> <span class="nav-text">2. 记忆过程的第二步：储存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-清晰的流程与反馈"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 清晰的流程与反馈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-记住用户的选择"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 记住用户的选择</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-记忆过程的第三步：提取"><span class="nav-number">4.</span> <span class="nav-text">3. 记忆过程的第三步：提取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-符合目标用户的心理模型"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 符合目标用户的心理模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-符合逻辑"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 符合逻辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-稳定的最简路径"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 稳定的最简路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许可君.Suer</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
