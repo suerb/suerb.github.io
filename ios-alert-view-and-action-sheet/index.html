@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="交互实验室," />
+  <meta name="keywords" content="交互," />
 
 
 
@@ -106,13 +106,13 @@
 
 
 
-<meta name="description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
-<meta name="keywords" content="交互实验室">
+<meta name="description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  ¶被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算">
+<meta name="keywords" content="交互">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
 <meta property="og:url" content="http://yoursite.com/ios-alert-view-and-action-sheet/index.html">
 <meta property="og:site_name" content="产品实验室">
-<meta property="og:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
+<meta property="og:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  ¶被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算">
 <meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
 <meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert02.png">
 <meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert03.png">
@@ -128,7 +128,7 @@
 <meta property="og:updated_time" content="2015-09-21T06:54:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
-<meta name="twitter:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
+<meta name="twitter:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  ¶被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算">
 <meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
 
 
@@ -372,7 +372,7 @@
 </blockquote>
 <p>在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" alt="左图的 Alert 是搞笑的，不要学，右图为 Action Sheet"></a></p>
-<h2>被混淆并滥用的 Alert</h2>
+<h2 id="被混淆并滥用的-alert"><a class="header-anchor" href="#被混淆并滥用的-alert">¶</a>被混淆并滥用的 Alert</h2>
 <p>根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。</p>
 <p>那么问题来了：问题的严重程度如何判断？谁说了算？对于产品利益方来说，任何问题都是严重的，为了最大可能地留住用户，连取消关注都要弹个对话框。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" alt="反例：陌陌加好友，网易云音乐删除私信，印象笔记评价引导"></a></p>
@@ -396,11 +396,11 @@
 <p>很多情况下，其实应该用 Action Sheet，而非 Alert。最重要的判断原则是，用户主动发起的任务使用 Action Sheet，否则使用 Alert。</p>
 <p>在深入了解细节之前，不妨先看看下图，领会一下两者的区别。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" alt="Alert 与 Action Sheet 的关系"></a></p>
-<h2>1. Alert</h2>
+<h2 id="1-alert"><a class="header-anchor" href="#1-alert">¶</a>1. Alert</h2>
 <p>Alert 作为一个占据屏幕中央的临时模态层，会严重打断用户的当前任务与操作，吸引用户所有注意力。因此，Apple 严肃地建议：尽量避免使用。</p>
 <p>Apple 还阐述了一个重要原则：在界面内能表达的信息，就不要使用 Alert。本人理解的另一层意思就是说，如果某些信息在界面上都表达不清晰、不完整，肯定是功能有问题，或是设计有问题，也许，两者都有问题？这些就不是 Alert 能解决的了。</p>
 <p>本人总结了一下，Alert 适用于以下场景。</p>
-<h4>1.1 辅助完成任务时使用 Alert</h4>
+<h4 id="1-1-辅助完成任务时使用-alert"><a class="header-anchor" href="#1-1-辅助完成任务时使用-alert">¶</a>1.1 辅助完成任务时使用 Alert</h4>
 <p>用户在任务的某个关键位置，遇到他们不能解决的严重问题、需要进行某些抉择，或补充某些信息才能让任务进行下去。例如引导用户允许使用各种系统权限，或验证密码等。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" alt="FYUSE"></a></p>
 <blockquote>
@@ -413,16 +413,16 @@
 <blockquote>
 <p>中图、右图：某些涉及隐私或者财产安全的任务中途，让用户在不脱离场景的情况下，填写密码验证个人信息，然后进入相关隐私页面。</p>
 </blockquote>
-<h4>1.2 提供某些必须引起用户重视的信息时使用 Alert</h4>
+<h4 id="1-2-提供某些必须引起用户重视的信息时使用-alert"><a class="header-anchor" href="#1-2-提供某些必须引起用户重视的信息时使用-alert">¶</a>1.2 提供某些必须引起用户重视的信息时使用 Alert</h4>
 <p>某些情况必须引起用户重视，例如网落连接失败、低电量提示等无可避免的非人为因素。<br>
 （低电量提示在 iOS 9 已改为含有「低电量模式」选项的 Alert 了，iOS 9 之前只有一个「好」…无图）</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" alt="微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到"></a></p>
 <blockquote>
 <p>微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到</p>
 </blockquote>
-<h2>2. Action Sheet</h2>
+<h2 id="2-action-sheet"><a class="header-anchor" href="#2-action-sheet">¶</a>2. Action Sheet</h2>
 <p>关于 Action Sheet，Apple HIG 官方定义了以下用途：</p>
-<h4>2.1 完成任务的不同方法</h4>
+<h4 id="2-1-完成任务的不同方法"><a class="header-anchor" href="#2-1-完成任务的不同方法">¶</a>2.1 完成任务的不同方法</h4>
 <p>在同一场景下，Action Sheet 提供了可以完成任务的一系列方法，或者对某一目标提供多种操作手段。另一个优点是更加节省界面空间。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" alt="Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程"></a></p>
 <blockquote>
@@ -432,7 +432,7 @@
 <blockquote>
 <p>Apple Music 把 Action Sheet 玩出了花</p>
 </blockquote>
-<h4>2.2 完成高危操作时，征求用户的二次确认</h4>
+<h4 id="2-2-完成高危操作时-征求用户的二次确认"><a class="header-anchor" href="#2-2-完成高危操作时-征求用户的二次确认">¶</a>2.2 完成高危操作时，征求用户的二次确认</h4>
 <p>这是很多设计师（包括我自己）都经常混淆的一个要点。当用户的下一步操作，与当前任务的主要目标不符，或是被用户主动中断等含有潜在风险的操作时，应该使用 Action Sheet，而非 Alert。如果需要，可以与第 1 点一样，为用户提供若干替代方案。</p>
 <p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" alt="iOS 删除相簿、联系人都只使用了 Action Sheet"></a></p>
 <blockquote>
@@ -448,7 +448,7 @@
 <blockquote>
 <p>Apple Beta 的 Feedback 与微信、QQ的任务中断确认</p>
 </blockquote>
-<h2>总结</h2>
+<h2 id="总结"><a class="header-anchor" href="#总结">¶</a>总结</h2>
 <p>就像抗生素一样，只要滥用，就会失效。引用 Apple 来结尾：</p>
 <blockquote>
 <p>The infrequency with which alerts appear helps users take them seriously. Be sure to minimize the number of alerts your app displays and ensure that each one offers critical information and useful choices.</p>
@@ -493,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/交互实验室/" rel="tag"># 交互实验室</a>
+            <a href="/tags/交互/" rel="tag"># 交互</a>
           
         </div>
       
@@ -612,7 +612,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -667,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">被混淆并滥用的 Alert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">1. Alert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.1 辅助完成任务时使用 Alert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">1.2 提供某些必须引起用户重视的信息时使用 Alert</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">2. Action Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.1.</span> <span class="nav-text">2.1 完成任务的不同方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.2 完成高危操作时，征求用户的二次确认</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#被混淆并滥用的-alert"><span class="nav-number">1.</span> <span class="nav-text">¶被混淆并滥用的 Alert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-alert"><span class="nav-number">2.</span> <span class="nav-text">¶1. Alert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-辅助完成任务时使用-alert"><span class="nav-number">2.0.1.</span> <span class="nav-text">¶1.1 辅助完成任务时使用 Alert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-提供某些必须引起用户重视的信息时使用-alert"><span class="nav-number">2.0.2.</span> <span class="nav-text">¶1.2 提供某些必须引起用户重视的信息时使用 Alert</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-action-sheet"><span class="nav-number">3.</span> <span class="nav-text">¶2. Action Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-完成任务的不同方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">¶2.1 完成任务的不同方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-完成高危操作时-征求用户的二次确认"><span class="nav-number">3.0.2.</span> <span class="nav-text">¶2.2 完成高危操作时，征求用户的二次确认</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">¶总结</span></a></li></ol></div>
             
 
           </div>
