@@ -361,11 +361,11 @@
 <p>来自<a href="http://www.zhihu.com/question/35141228/answer/61369322" target="_blank" rel="external">知乎的一个问题</a></p>
 </blockquote>
 <p>在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" alt="左图的 Alert 是搞笑的，不要学，右图为 Action Sheet"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" alt="左图的 Alert 是搞笑的，不要学，右图为 Action Sheet"></p>
 <h2 id="被混淆并滥用的-alert"><a class="header-anchor" href="#被混淆并滥用的-alert">¶</a>被混淆并滥用的 Alert</h2>
 <p>根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。</p>
 <p>那么问题来了：问题的严重程度如何判断？谁说了算？对于产品利益方来说，任何问题都是严重的，为了最大可能地留住用户，连取消关注都要弹个对话框。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" alt="反例：陌陌加好友，网易云音乐删除私信，印象笔记评价引导"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" alt="反例：陌陌加好友，网易云音乐删除私信，印象笔记评价引导"></p>
 <blockquote>
 <p>左图：陌陌加个好友都要用 Alert。陌陌看似为了帮助用户完成目标任务（在陌陌加通讯录好友），其实是为了满足自己的业务目标——对方没装陌陌时，通过短信送达「好友邀请」来拉新。产品利益方觉得你加不到好友，问题很严重，短信骚扰反而不算是事儿。</p>
 </blockquote>
@@ -376,7 +376,7 @@
 <p>右图：Evernote 的评价引导，貌似是 Twitter 发明的，呵呵。</p>
 </blockquote>
 <p>还有各种各样的原因导致 Alert 被滥用：功能拥挤导致界面无法合理承载有效信息，只能靠弹窗提示用户；抢夺用户稀缺的注意力；产品设计师偷懒等等。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" alt="反例：微信的举报与选图组件"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" alt="反例：微信的举报与选图组件"></p>
 <blockquote>
 <p>左图：微信的举报功能，当提交时遇到未填项则弹窗提示。若判断到有未填项，是否可以禁用「提交」按钮？或者在未填栏目附近的界面上作出反馈提示？总比随便弹个对话框要好。（新版已修正）</p>
 </blockquote>
@@ -385,18 +385,18 @@
 </blockquote>
 <p>很多情况下，其实应该用 Action Sheet，而非 Alert。最重要的判断原则是，用户主动发起的任务使用 Action Sheet，否则使用 Alert。</p>
 <p>在深入了解细节之前，不妨先看看下图，领会一下两者的区别。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" alt="Alert 与 Action Sheet 的关系"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" alt="Alert 与 Action Sheet 的关系"></p>
 <h2 id="1-alert"><a class="header-anchor" href="#1-alert">¶</a>1. Alert</h2>
 <p>Alert 作为一个占据屏幕中央的临时模态层，会严重打断用户的当前任务与操作，吸引用户所有注意力。因此，Apple 严肃地建议：尽量避免使用。</p>
 <p>Apple 还阐述了一个重要原则：在界面内能表达的信息，就不要使用 Alert。本人理解的另一层意思就是说，如果某些信息在界面上都表达不清晰、不完整，肯定是功能有问题，或是设计有问题，也许，两者都有问题？这些就不是 Alert 能解决的了。</p>
 <p>本人总结了一下，Alert 适用于以下场景。</p>
 <h4 id="1-1-辅助完成任务时使用-alert"><a class="header-anchor" href="#1-1-辅助完成任务时使用-alert">¶</a>1.1 辅助完成任务时使用 Alert</h4>
 <p>用户在任务的某个关键位置，遇到他们不能解决的严重问题、需要进行某些抉择，或补充某些信息才能让任务进行下去。例如引导用户允许使用各种系统权限，或验证密码等。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" alt="FYUSE"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" alt="FYUSE"></p>
 <blockquote>
 <p>FYUSE 登录时识别到此邮箱尚未注册导致无法登录，就使用 Alert 来咨询用户是否需要用此邮箱直接注册，这也是尊重用户意愿的表现。</p>
 </blockquote>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" alt="微信与 App Store"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" alt="微信与 App Store"></p>
 <blockquote>
 <p>左图：最常见的权限申请引导，不同意的话就无法正常使用某些功能，因此会详细说明。</p>
 </blockquote>
@@ -406,7 +406,7 @@
 <h4 id="1-2-提供某些必须引起用户重视的信息时使用-alert"><a class="header-anchor" href="#1-2-提供某些必须引起用户重视的信息时使用-alert">¶</a>1.2 提供某些必须引起用户重视的信息时使用 Alert</h4>
 <p>某些情况必须引起用户重视，例如网落连接失败、低电量提示等无可避免的非人为因素。<br>
 （低电量提示在 iOS 9 已改为含有「低电量模式」选项的 Alert 了，iOS 9 之前只有一个「好」…无图）</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" alt="微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" alt="微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到"></p>
 <blockquote>
 <p>微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到</p>
 </blockquote>
@@ -414,27 +414,27 @@
 <p>关于 Action Sheet，Apple HIG 官方定义了以下用途：</p>
 <h4 id="2-1-完成任务的不同方法"><a class="header-anchor" href="#2-1-完成任务的不同方法">¶</a>2.1 完成任务的不同方法</h4>
 <p>在同一场景下，Action Sheet 提供了可以完成任务的一系列方法，或者对某一目标提供多种操作手段。另一个优点是更加节省界面空间。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" alt="Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" alt="Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程"></p>
 <blockquote>
 <p>Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程</p>
 </blockquote>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" alt="Apple Music 把 Action Sheet 玩出了花"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" alt="Apple Music 把 Action Sheet 玩出了花"></p>
 <blockquote>
 <p>Apple Music 把 Action Sheet 玩出了花</p>
 </blockquote>
 <h4 id="2-2-完成高危操作时-征求用户的二次确认"><a class="header-anchor" href="#2-2-完成高危操作时-征求用户的二次确认">¶</a>2.2 完成高危操作时，征求用户的二次确认</h4>
 <p>这是很多设计师（包括我自己）都经常混淆的一个要点。当用户的下一步操作，与当前任务的主要目标不符，或是被用户主动中断等含有潜在风险的操作时，应该使用 Action Sheet，而非 Alert。如果需要，可以与第 1 点一样，为用户提供若干替代方案。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" alt="iOS 删除相簿、联系人都只使用了 Action Sheet"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" alt="iOS 删除相簿、联系人都只使用了 Action Sheet"></p>
 <blockquote>
 <p>iOS 删除相簿、联系人都只使用了 Action Sheet</p>
 </blockquote>
 <p>Evernote 提供了保存草稿的替代方案，但并不是所有产品都支持草稿。</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" alt="Evernote 编辑笔记时点击取消，也只调用了 Action Sheet"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" alt="Evernote 编辑笔记时点击取消，也只调用了 Action Sheet"></p>
 <blockquote>
 <p>Evernote 编辑笔记时点击取消，也只调用了 Action Sheet</p>
 </blockquote>
 <p>下面的为错误使用的反例：</p>
-<p><a href="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" target="_blank" rel="external"><img src="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" alt="Apple Beta 的 Feedback 与微信、QQ的任务中断确认"></a></p>
+<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" alt="Apple Beta 的 Feedback 与微信、QQ的任务中断确认"></p>
 <blockquote>
 <p>Apple Beta 的 Feedback 与微信、QQ的任务中断确认</p>
 </blockquote>

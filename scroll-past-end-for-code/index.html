@@ -106,20 +106,20 @@
 
 
 
-<meta name="description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：   这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如">
+<meta name="description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：  这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如果">
 <meta name="keywords" content="编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果">
 <meta property="og:url" content="http://yoursite.com/scroll-past-end-for-code/index.html">
 <meta property="og:site_name" content="产品实验室">
-<meta property="og:description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：   这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如">
+<meta property="og:description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：  这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如果">
 <meta property="og:image" content="http://yoursite.com/content/images/2015/09/scroll-past-end01.png">
 <meta property="og:image" content="http://yoursite.com/content/images/2015/09/scroll-past-end02.png">
 <meta property="og:image" content="http://yoursite.com/content/images/2015/09/scroll-past-end03.png">
 <meta property="og:updated_time" content="2015-09-20T02:05:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果">
-<meta name="twitter:description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：   这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如">
+<meta name="twitter:description" content="Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：  这个是 Sublime Text 的 scroll-past-end 属性，具体可参考官方说明。 Sublime Text 的具体设置方法是，cmd + , 打开配置文件，找到 scroll_past_end 设置为 false 以关闭超出缓冲区的滚动。如果">
 <meta name="twitter:image" content="http://yoursite.com/content/images/2015/09/scroll-past-end01.png">
 
 
@@ -349,15 +349,14 @@
 
       
         <p>Sublime Text 编码窗口有个很好的设定，就是当屏幕滚动到最后一行代码时，可以继续往下滚动，让整屏空白可编辑但没有行数，效果如下：</p>
-<p><a href="/content/images/2015/09/scroll-past-end01.png"><img src="/content/images/2015/09/scroll-past-end01.png" alt="Sublime Text 的 scroll-past-end"><br>
-</a></p>
+<p><img src="/content/images/2015/09/scroll-past-end01.png" alt="Sublime Text 的 scroll-past-end"></p>
 <p>这个是 Sublime Text 的 <code>scroll-past-end</code> 属性，具体可参考<a href="http://sublime-undocs-zh.readthedocs.org/en/latest/reference/settings.html" target="_blank" rel="external">官方说明</a>。</p>
 <p>Sublime Text 的具体设置方法是，<code>cmd + ,</code> 打开配置文件，找到<br>
 <code>scroll_past_end</code> 设置为 <code>false</code> 以关闭超出缓冲区的滚动。如果设置为 <code>true</code> ，Sublime Text 将在文本的最后一行与窗口下边界之间添加一大块空白区域。</p>
 <p>然而，Xcode 默认却没有这个选项，逼死强迫症……</p>
-<p><a href="/content/images/2015/09/scroll-past-end02.png"><img src="/content/images/2015/09/scroll-past-end02.png" alt="Xcode 没有 scroll-past-end"></a></p>
+<p><img src="/content/images/2015/09/scroll-past-end02.png" alt="Xcode 没有 scroll-past-end"></p>
 <p>后来搜了一下，找到了 <a href="http://stackoverflow.com/questions/13709652/is-there-any-way-to-scroll-beyond-the-last-line-in-xcode" target="_blank" rel="external">stack overflow 的这个帖子</a>。楼下有个仁兄提到 <a href="https://github.com/stefanceriu/SCXcodeEditorInset" target="_blank" rel="external">SCXcodeEditorInset</a> 这个 Xcode 插件，安装完后效果如下：</p>
-<p><a href="/content/images/2015/09/scroll-past-end03.png"><img src="/content/images/2015/09/scroll-past-end03.png" alt="SCXcodeEditorInset"></a></p>
+<p><img src="/content/images/2015/09/scroll-past-end03.png" alt="SCXcodeEditorInset"></p>
 <p>爽。</p>
 
       
