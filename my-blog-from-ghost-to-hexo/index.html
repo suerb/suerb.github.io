@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
+<meta name="description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 12用你的域名代替 yourghostblog.comhttp://yourghostblog.com/ghost/settings/labs/ 然后，安装 h">
 <meta name="keywords" content="编程,工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的博客从Ghost转移到Hexo">
 <meta property="og:url" content="http://yoursite.com/my-blog-from-ghost-to-hexo/index.html">
 <meta property="og:site_name" content="产品实验室">
-<meta property="og:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
+<meta property="og:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 12用你的域名代替 yourghostblog.comhttp://yourghostblog.com/ghost/settings/labs/ 然后，安装 h">
 <meta property="og:updated_time" content="2017-05-27T06:00:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客从Ghost转移到Hexo">
-<meta name="twitter:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
+<meta name="twitter:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 12用你的域名代替 yourghostblog.comhttp://yourghostblog.com/ghost/settings/labs/ 然后，安装 h">
 
 
 
@@ -371,21 +371,13 @@
 <p>具体不介绍了，一搜一个准，非常多教程。</p>
 <h3 id="从-hexo-导入-ghost-的备份文件">从 Hexo 导入 Ghost 的备份文件</h3>
 <p>首先，在 Ghost 后台的 <code>Labs/Export</code> 导出备份 <code>json</code> 格式文件，并修改文件名为 <code>ghost.json</code> 以供后续使用。</p>
-<pre><code>用你的域名代替 yourghostblog.com
-http://yourghostblog.com/ghost/settings/labs/
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">用你的域名代替 yourghostblog.com</div><div class="line">http://yourghostblog.com/ghost/settings/labs/</div></pre></td></tr></table></figure>
 <p>然后，安装 <code>hexo-migrator-ghost</code>，安装完毕后执行一下命令</p>
-<pre><code>npm install hexo-migrator-ghost --save
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-migrator-ghost --save</div></pre></td></tr></table></figure>
 <p>安装完毕后，在 hexo 本地根目录进入 <code>./scaffolds/</code> 文件夹，修改 <code>post.md</code> 和 <code>draft.md</code> 等模板内容为：</p>
-<pre><code>title: {{ title }}  
-date: {{ date }}  
-tags: {{ tags }}  
----
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;&#123; title &#125;&#125;  </div><div class="line">date: &#123;&#123; date &#125;&#125;  </div><div class="line">tags: &#123;&#123; tags &#125;&#125;  </div><div class="line">---</div></pre></td></tr></table></figure>
 <p>最后，将刚才导出的 <code>ghost.json</code> 移动至 hexo 的本地根目录，执行以下命令：</p>
-<pre><code>hexo migrate ghost ghost.json
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate ghost ghost.json</div></pre></td></tr></table></figure>
 <p>生成的博文会自动放入 <code>./source/_posts</code> 等文件夹。</p>
 <p>暂时写到这里，后续补充样式。</p>
 
