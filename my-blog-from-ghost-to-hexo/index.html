@@ -99,17 +99,17 @@
 
 
 
-<meta name="description" content="Hexo 的建立 域名的绑定 从 Hexo 导入 Ghost 的备份文件 个性化样式 字体 文章列表显示摘要 其他">
+<meta name="description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
 <meta name="keywords" content="编程,工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的博客从Ghost转移到Hexo">
 <meta property="og:url" content="http://yoursite.com/my-blog-from-ghost-to-hexo/index.html">
 <meta property="og:site_name" content="产品实验室">
-<meta property="og:description" content="Hexo 的建立 域名的绑定 从 Hexo 导入 Ghost 的备份文件 个性化样式 字体 文章列表显示摘要 其他">
+<meta property="og:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
 <meta property="og:updated_time" content="2017-05-27T06:00:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客从Ghost转移到Hexo">
-<meta name="twitter:description" content="Hexo 的建立 域名的绑定 从 Hexo 导入 Ghost 的备份文件 个性化样式 字体 文章列表显示摘要 其他">
+<meta name="twitter:description" content="Hexo 的建立 具体不介绍了，一搜一个准，非常多教程。 从 Hexo 导入 Ghost 的备份文件 首先，在 Ghost 后台的 Labs/Export 导出备份 json 格式文件，并修改文件名为 ghost.json 以供后续使用。 用你的域名代替 yourghostblog.com http://yourghostblog.com/ghost/settings/labs/  然后，安装 h">
 
 
 
@@ -368,12 +368,26 @@
 
       
         <h3 id="hexo-的建立">Hexo 的建立</h3>
-<h3 id="域名的绑定">域名的绑定</h3>
+<p>具体不介绍了，一搜一个准，非常多教程。</p>
 <h3 id="从-hexo-导入-ghost-的备份文件">从 Hexo 导入 Ghost 的备份文件</h3>
-<h3 id="个性化样式">个性化样式</h3>
-<h4 id="字体">字体</h4>
-<h4 id="文章列表显示摘要">文章列表显示摘要</h4>
-<h4 id="其他">其他</h4>
+<p>首先，在 Ghost 后台的 <code>Labs/Export</code> 导出备份 <code>json</code> 格式文件，并修改文件名为 <code>ghost.json</code> 以供后续使用。</p>
+<pre><code>用你的域名代替 yourghostblog.com
+http://yourghostblog.com/ghost/settings/labs/
+</code></pre>
+<p>然后，安装 <code>hexo-migrator-ghost</code>，安装完毕后执行一下命令</p>
+<pre><code>npm install hexo-migrator-ghost --save
+</code></pre>
+<p>安装完毕后，在 hexo 本地根目录进入 <code>./scaffolds/</code> 文件夹，修改 <code>post.md</code> 和 <code>draft.md</code> 等模板内容为：</p>
+<pre><code>title: {{ title }}  
+date: {{ date }}  
+tags: {{ tags }}  
+---
+</code></pre>
+<p>最后，将刚才导出的 <code>ghost.json</code> 移动至 hexo 的本地根目录，执行以下命令：</p>
+<pre><code>hexo migrate ghost ghost.json
+</code></pre>
+<p>生成的博文会自动放入 <code>./source/_posts</code> 等文件夹。</p>
+<p>暂时写到这里，后续补充样式。</p>
 
       
     </div>
@@ -571,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-的建立"><span class="nav-number">1.</span> <span class="nav-text">Hexo 的建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名的绑定"><span class="nav-number">2.</span> <span class="nav-text">域名的绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-hexo-导入-ghost-的备份文件"><span class="nav-number">3.</span> <span class="nav-text">从 Hexo 导入 Ghost 的备份文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个性化样式"><span class="nav-number">4.</span> <span class="nav-text">个性化样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体"><span class="nav-number">4.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章列表显示摘要"><span class="nav-number">4.2.</span> <span class="nav-text">文章列表显示摘要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-number">4.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-的建立"><span class="nav-number">1.</span> <span class="nav-text">Hexo 的建立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-hexo-导入-ghost-的备份文件"><span class="nav-number">2.</span> <span class="nav-text">从 Hexo 导入 Ghost 的备份文件</span></a></li></ol></div>
             
 
           </div>
