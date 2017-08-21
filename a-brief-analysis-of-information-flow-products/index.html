@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="交互," />
+  <meta name="keywords" content="产品思维," />
 
 
 
@@ -119,30 +119,17 @@
 
 
 
-<meta name="description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
-<meta name="keywords" content="交互">
+<meta name="description" content="资讯类信息流产品研究 在 web 1.0 和 2.0 时代，用户在门户新闻网站查寻信息，靠的是分类与导航。后来，用户会到搜索引擎搜索信息，或者在各大媒体网站、社交平台关注和订阅自己感兴趣的内容。 这些都是用户主动去找信息的行为。 而传统的新闻客户端，就是基于这一行为特征来设计的。首先，门户编辑团队会提供内容，或采集业内新闻机构的优质内容。然后，结合他们的经验来将内容划分优先级，显示于门户首页和客户">
+<meta name="keywords" content="产品思维">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
-<meta property="og:url" content="https://www.suerb.com/ios-alert-view-and-action-sheet/index.html">
+<meta property="og:title" content="浅析资讯类信息流产品">
+<meta property="og:url" content="https://www.suerb.com/a-brief-analysis-of-information-flow-products/index.html">
 <meta property="og:site_name" content="产品实验室">
-<meta property="og:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert02.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert03.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert04.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert05.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert06.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert08.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png">
-<meta property="og:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert07.png">
-<meta property="og:updated_time" content="2015-09-21T06:54:48.000Z">
+<meta property="og:description" content="资讯类信息流产品研究 在 web 1.0 和 2.0 时代，用户在门户新闻网站查寻信息，靠的是分类与导航。后来，用户会到搜索引擎搜索信息，或者在各大媒体网站、社交平台关注和订阅自己感兴趣的内容。 这些都是用户主动去找信息的行为。 而传统的新闻客户端，就是基于这一行为特征来设计的。首先，门户编辑团队会提供内容，或采集业内新闻机构的优质内容。然后，结合他们的经验来将内容划分优先级，显示于门户首页和客户">
+<meta property="og:updated_time" content="2017-08-21T10:51:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
-<meta name="twitter:description" content="来自知乎的一个问题  在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。  被混淆并滥用的 Alert 根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。 那么问题来了：问题的严重程度如何判断？谁说了算？">
-<meta name="twitter:image" content="http://7xigda.com1.z0.glb.clouddn.com/alert01.png">
+<meta name="twitter:title" content="浅析资讯类信息流产品">
+<meta name="twitter:description" content="资讯类信息流产品研究 在 web 1.0 和 2.0 时代，用户在门户新闻网站查寻信息，靠的是分类与导航。后来，用户会到搜索引擎搜索信息，或者在各大媒体网站、社交平台关注和订阅自己感兴趣的内容。 这些都是用户主动去找信息的行为。 而传统的新闻客户端，就是基于这一行为特征来设计的。首先，门户编辑团队会提供内容，或采集业内新闻机构的优质内容。然后，结合他们的经验来将内容划分优先级，显示于门户首页和客户">
 
 
 
@@ -170,13 +157,13 @@
 
 
 
-  <link rel="canonical" href="https://www.suerb.com/ios-alert-view-and-action-sheet/"/>
+  <link rel="canonical" href="https://www.suerb.com/a-brief-analysis-of-information-flow-products/"/>
 
 
 
 
 
-  <title>不要滥用对话框！细说 iOS Alert View 与 Action Sheet | 产品实验室</title>
+  <title>浅析资讯类信息流产品 | 产品实验室</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -325,7 +312,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://www.suerb.com/ios-alert-view-and-action-sheet/">
+    <link itemprop="mainEntityOfPage" href="https://www.suerb.com/a-brief-analysis-of-information-flow-products/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="许可君.Suer">
@@ -342,7 +329,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">不要滥用对话框！细说 iOS Alert View 与 Action Sheet</h2>
+          <h2 class="post-title" itemprop="name headline">浅析资讯类信息流产品</h2>
         
 
         <div class="post-meta">
@@ -354,8 +341,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-09-13T09:28:27+08:00">
-                2015-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T18:50:00+08:00">
+                2017-08-21
               </time>
             
 
@@ -372,7 +359,7 @@
 
           
           
-             <span id="/ios-alert-view-and-action-sheet/" class="leancloud_visitors" data-flag-title="不要滥用对话框！细说 iOS Alert View 与 Action Sheet">
+             <span id="/a-brief-analysis-of-information-flow-products/" class="leancloud_visitors" data-flag-title="浅析资讯类信息流产品">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,98 +392,59 @@
       
 
       
-        <blockquote>
-<p>来自<a href="http://www.zhihu.com/question/35141228/answer/61369322" target="_blank" rel="external">知乎的一个问题</a></p>
-</blockquote>
-<p>在日常使用应用的过程中，经常会遇到各种各样的对话框（ Alert View，下面简称 Alert），其滥用程度之严重，导致用户认知疲劳和思觉失调，完全无视了 Alert 的重要性，大大降低了其效用。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert01.png" alt="左图的 Alert 是搞笑的，不要学，右图为 Action Sheet"></p>
-<h2 id="被混淆并滥用的-alert">被混淆并滥用的 Alert</h2>
-<p>根据 Alert 的使用原则，「问题很严重」的时候就需要调用它来提醒用户并引导用户的下一步操作。</p>
-<p>那么问题来了：问题的严重程度如何判断？谁说了算？对于产品利益方来说，任何问题都是严重的，为了最大可能地留住用户，连取消关注都要弹个对话框。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert02.png" alt="反例：陌陌加好友，网易云音乐删除私信，印象笔记评价引导"></p>
+        <h1>资讯类信息流产品研究</h1>
+<p>在 web 1.0 和 2.0 时代，用户在门户新闻网站查寻信息，靠的是分类与导航。后来，用户会到搜索引擎搜索信息，或者在各大媒体网站、社交平台关注和订阅自己感兴趣的内容。</p>
+<p>这些都是用户主动去找信息的行为。</p>
+<p>而传统的新闻客户端，就是基于这一行为特征来设计的。首先，门户编辑团队会提供内容，或采集业内新闻机构的优质内容。然后，结合他们的经验来将内容划分优先级，显示于门户首页和客户端。简单来说，就是把传统报纸或者新闻网站的内容照搬到移动端，与其说是「新闻客户端」，不如说是「门户客户端」——以移动客户端的产品形态来承载各大新闻门户网站的内容。</p>
+<p>那时候，用户就是在这些传统门户新闻客户端的海量信息里浏览自己想要的信息。</p>
+<h2 id="产品架构">产品架构</h2>
+<p>现在，随着大数据与推荐技术的发展，信息流产品可以根据用户的喜好，将内容进行精准分发推送。</p>
+<p>一般来说，资讯类信息流产品的架构，横向维度是通过聚合各类泛新闻资讯内容，例如国内、娱乐、体育、广州本地要闻等，纵向是基于时间维度的内容列表信息流，根据用户喜好，将内容进行个性化推荐，以统一形态从上至下排列展示。</p>
+<p>大的架构看起来跟传统新闻客户端差不多。但是，内容分发的方式在不断发生变化。</p>
 <blockquote>
-<p>左图：陌陌加个好友都要用 Alert。陌陌看似为了帮助用户完成目标任务（在陌陌加通讯录好友），其实是为了满足自己的业务目标——对方没装陌陌时，通过短信送达「好友邀请」来拉新。产品利益方觉得你加不到好友，问题很严重，短信骚扰反而不算是事儿。</p>
+<p>以前是用户主动找内容，现在是内容主动找用户。</p>
 </blockquote>
-<blockquote>
-<p>中图：网易云音乐删私除信。其实，左滑展示「删除」按钮是第一步，再点击「删除」按钮其实已经等于二次确认了，无需再 Alert 进行 3 次确认；</p>
-</blockquote>
-<blockquote>
-<p>右图：Evernote 的评价引导，貌似是 Twitter 发明的，呵呵。</p>
-</blockquote>
-<p>还有各种各样的原因导致 Alert 被滥用：功能拥挤导致界面无法合理承载有效信息，只能靠弹窗提示用户；抢夺用户稀缺的注意力；产品设计师偷懒等等。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert03.png" alt="反例：微信的举报与选图组件"></p>
-<blockquote>
-<p>左图：微信的举报功能，当提交时遇到未填项则弹窗提示。若判断到有未填项，是否可以禁用「提交」按钮？或者在未填栏目附近的界面上作出反馈提示？总比随便弹个对话框要好。（新版已修正）</p>
-</blockquote>
-<blockquote>
-<p>右图：微信选图组件，每次选择达到上限时均弹窗提示，是否能直接展示 9/9 这样的「已选数/上限数」形式，然后禁用选中按钮。即使是为了让老年人更好地理解，也只需要提示 1 次，即可达到教育目的。</p>
-</blockquote>
-<p>很多情况下，其实应该用 Action Sheet，而非 Alert。最重要的判断原则是，用户主动发起的任务使用 Action Sheet，否则使用 Alert。</p>
-<p>在深入了解细节之前，不妨先看看下图，领会一下两者的区别。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert04.png" alt="Alert 与 Action Sheet 的关系"></p>
-<h2 id="1-alert">1. Alert</h2>
-<p>Alert 作为一个占据屏幕中央的临时模态层，会严重打断用户的当前任务与操作，吸引用户所有注意力。因此，Apple 严肃地建议：尽量避免使用。</p>
-<p>Apple 还阐述了一个重要原则：在界面内能表达的信息，就不要使用 Alert。本人理解的另一层意思就是说，如果某些信息在界面上都表达不清晰、不完整，肯定是功能有问题，或是设计有问题，也许，两者都有问题？这些就不是 Alert 能解决的了。</p>
-<p>本人总结了一下，Alert 适用于以下场景。</p>
-<h4 id="1-1-辅助完成任务时使用-alert">1.1 辅助完成任务时使用 Alert</h4>
-<p>用户在任务的某个关键位置，遇到他们不能解决的严重问题、需要进行某些抉择，或补充某些信息才能让任务进行下去。例如引导用户允许使用各种系统权限，或验证密码等。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert05.png" alt="FYUSE"></p>
-<blockquote>
-<p>FYUSE 登录时识别到此邮箱尚未注册导致无法登录，就使用 Alert 来咨询用户是否需要用此邮箱直接注册，这也是尊重用户意愿的表现。</p>
-</blockquote>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert06.png" alt="微信与 App Store"></p>
-<blockquote>
-<p>左图：最常见的权限申请引导，不同意的话就无法正常使用某些功能，因此会详细说明。</p>
-</blockquote>
-<blockquote>
-<p>中图、右图：某些涉及隐私或者财产安全的任务中途，让用户在不脱离场景的情况下，填写密码验证个人信息，然后进入相关隐私页面。</p>
-</blockquote>
-<h4 id="1-2-提供某些必须引起用户重视的信息时使用-alert">1.2 提供某些必须引起用户重视的信息时使用 Alert</h4>
-<p>某些情况必须引起用户重视，例如网落连接失败、低电量提示等无可避免的非人为因素。<br>
-（低电量提示在 iOS 9 已改为含有「低电量模式」选项的 Alert 了，iOS 9 之前只有一个「好」…无图）</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert08.png" alt="微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到"></p>
-<blockquote>
-<p>微信的网络连接失败提示，为什么不用 toast？因为用户可能发送后就转移场景或去忙别的事情，但必须让他了解到发送失败的原因，才能自行选择下一步行动，toast 的短暂性质无法保证用户能看到</p>
-</blockquote>
-<h2 id="2-action-sheet">2. Action Sheet</h2>
-<p>关于 Action Sheet，Apple HIG 官方定义了以下用途：</p>
-<h4 id="2-1-完成任务的不同方法">2.1 完成任务的不同方法</h4>
-<p>在同一场景下，Action Sheet 提供了可以完成任务的一系列方法，或者对某一目标提供多种操作手段。另一个优点是更加节省界面空间。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet01.png" alt="Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程"></p>
-<blockquote>
-<p>Safari 长按图片调用 Action Sheet，可对图片进行多种操作；微信的是常见的拍照/选图流程</p>
-</blockquote>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet02.png" alt="Apple Music 把 Action Sheet 玩出了花"></p>
-<blockquote>
-<p>Apple Music 把 Action Sheet 玩出了花</p>
-</blockquote>
-<h4 id="2-2-完成高危操作时-征求用户的二次确认">2.2 完成高危操作时，征求用户的二次确认</h4>
-<p>这是很多设计师（包括我自己）都经常混淆的一个要点。当用户的下一步操作，与当前任务的主要目标不符，或是被用户主动中断等含有潜在风险的操作时，应该使用 Action Sheet，而非 Alert。如果需要，可以与第 1 点一样，为用户提供若干替代方案。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet03.png" alt="iOS 删除相簿、联系人都只使用了 Action Sheet"></p>
-<blockquote>
-<p>iOS 删除相簿、联系人都只使用了 Action Sheet</p>
-</blockquote>
-<p>Evernote 提供了保存草稿的替代方案，但并不是所有产品都支持草稿。</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/actionsheet04.png" alt="Evernote 编辑笔记时点击取消，也只调用了 Action Sheet"></p>
-<blockquote>
-<p>Evernote 编辑笔记时点击取消，也只调用了 Action Sheet</p>
-</blockquote>
-<p>下面的为错误使用的反例：</p>
-<p><img src="http://7xigda.com1.z0.glb.clouddn.com/alert07.png" alt="Apple Beta 的 Feedback 与微信、QQ的任务中断确认"></p>
-<blockquote>
-<p>Apple Beta 的 Feedback 与微信、QQ的任务中断确认</p>
-</blockquote>
+<p>以「今日头条」为代表的信息流产品，其本质是「信息分发渠道」。</p>
+<p>在产品建立初期，通过抓取全网内容，捕捉用户的阅读行为，利用不断完善的算法分析阅读习惯，进而主动推荐用户感兴趣的内容。内容库积累到一定程度后，只要一刷新，就能从里面挑选出用户未没看过又感兴趣的内容。</p>
+<p>此外，用户还可以通过把内容标记为「不感兴趣」的方式主动筛选内容，帮助建立个人喜好数据。</p>
+<p>理论上来说，如果内容库足够大，推荐机制足够完善，用户可以无限刷新出自己感兴趣的内容。</p>
+<p>在获得一定用户量和用户喜好数据后，就可以着手建立自媒体创作平台，利用稳定、可观的收入来吸纳优质内容生产者，构建竞争壁垒。再加入传统的「订阅」、「关注」机制，帮助内容生产者沉淀阅读人群，保证收益预期。</p>
+<h2 id="运营体系">运营体系</h2>
+<p>运营的对象有两种，一种面向是阅读者的，一种是面向创作者的。</p>
+<p>对于阅读者来说：</p>
+<ul>
+<li>内容好看用户才会留下来，所以算法需要足够精准，推荐给用户的内容必须匹配他们的喜好，并且对相近内容做排重处理，避免重复内容导致反感；</li>
+<li>在合适的场景提供热点资讯合集（例如信息流滑动到第四屏左右），完善「相关文章」栏目的推荐机制，促进用户消费更多内容；</li>
+<li>提供强话题性的内容以刺激评论，提高参与度，进而促进用户登录，保留用户阅读喜好，解决了「重装手机系统就丢失一个用户」的问题（重装系统，未登录用户的喜好数据就失联了）；</li>
+<li>适时地当提供用户兴趣范围之外的热点内容，让他们保持「新鲜感」。</li>
+</ul>
+<p>对于创作者来说：</p>
+<ul>
+<li>以严格的规则来维护健康的内容生态，避免劣币驱逐良币，引导创作者生产更多优质内容。例如限制标题党，规范内容排版结构，甚至像头条那样，设立了<a href="https://mp.toutiao.com/profile_introduction/selfservice/plan" target="_blank" rel="external">「头条号指数」</a>和<a href="http://www.toutiao.com/i6331883638606529026/" target="_blank" rel="external">「帐号分值」</a>的扣分体系；</li>
+<li>提高内容从创作到投放的简易度，从而提升内容变现的转化效率。例如，创作平台的内容写作工具是否易用，审批是否高效和自动化；</li>
+<li>帮助内容精准触达受众（又是推荐算法）。</li>
+</ul>
+<h2 id="商业模式">商业模式</h2>
+<p>头条类信息流产品，都是以投放广告为盈利模式。以「今日头条」为例，其广告投放方式有以下几种：</p>
+<ul>
+<li>打开 app 时的闪屏，分为静态和动态、可点击与不可点击；</li>
+<li>信息流广告，形态与普通内容卡片一样；</li>
+<li>内容详情页底部的广告位（若是图片墙类型内容，广告则以图片形式显示在最后一页）；</li>
+<li>内容详情页里面可以放各大电商平台的商品链接（图片墙的话整张图片就是一个商品链接），算是导购类型的内容。</li>
+</ul>
+<p>其中，信息流广告算是一大创造发明，也是资讯类信息流产品的主要盈利模式。它的优势有以下几点：</p>
+<ol>
+<li>信息流广告的形态接近资讯内容本身，而且穿插在信息流列表之间，或者文章详情页的结尾，对于用户来说只有轻微的影响，心里接受度较高；</li>
+<li>从传统广告投放的「买广告位」模式，转变为「买用户（兴趣）」模式，根据用户阅读喜好数据和算法精准推荐，让用户看到感兴趣的广告，结合第 1 点提到的类似资讯内容的广告展示形态，真正做到「广告即内容」（我自己本身就试过，点进广告看完返回首页，才发现该内容卡片角落写着「广告」两个字）；</li>
+<li>由于信息流广告融合与内容流里面，为了保证效果，提高转化率，对广告质量提出了更高要求，因此我们现在看到的信息流广告，质量大大高于传统贴片广告。</li>
+</ol>
+<p>据了解，「新浪微博」的信息流广告，在初期的时候，以 banner 的形态显示在信息流内的固定位置。后来，改成了随机位置显示广告，结合用户兴趣筛选合适的广告内容，并以微博内容卡片的形态来展示，大大提高了点击率。</p>
+<p>此外，内容详情页的底部也有广告位，采用 CPM（Cost Per Mille，按千次展示付费）形式撮合广告主和流量主，以到达文章底部为计算标准，据说此模式的转化率也非常高。</p>
+<p>现在，「今日头条」还可以在文章内插入第三方平台的「商品」（现支持京东、天猫、淘宝、亚马逊、微店、有赞等电子商务平台商品）。在正文中，商品会以卡片的形式展示，用户点击即可跳转购买。这种 CPS（Cost Per Sale，按销售付费）模式，更像是导购，阅读者在消费内容与消费商品之间平滑切换。</p>
 <h2 id="总结">总结</h2>
-<p>就像抗生素一样，只要滥用，就会失效。引用 Apple 来结尾：</p>
-<blockquote>
-<p>The infrequency with which alerts appear helps users take them seriously. Be sure to minimize the number of alerts your app displays and ensure that each one offers critical information and useful choices.</p>
-</blockquote>
-<blockquote>
-<p>合理低频地使用 Alert，用户才会把它当作一回事。请严格控制应用的 Alert 数量，并确保每一个都用得其所。</p>
-</blockquote>
-<blockquote>
-<p>—— Apple <ios human="" interface="" guideline=""></ios></p>
-</blockquote>
+<p>资讯流信息流产品，亦即头条类产品，也开始从泛阅读平台，逐渐向兴趣阅读平台转型。</p>
+<p>通过培养优质创作者，精准分发他们的高质量文章，帮助他们变现、沉淀粉丝，「圈养」成一批「社群媒体」。对于资讯流信息流来说，「社群媒体」即是「粉丝经济」模式。关注这批社群媒体的读者，内容喜好匹配度与广告接受度都相对更高，对于平台和创作者来说，变现效率更高。</p>
+<p>从内容分发并触达用户、用户养成阅读习惯提高活跃、高质量高转化率的信息流广告盈利、以合理的收益吸纳自媒体并提供更多独有优质内容、优质内容触达并吸收更多用户，一整套流程形成资讯类信息流的闭环。</p>
 
       
     </div>
@@ -531,7 +479,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/交互/" rel="tag"># 交互</a>
+            <a href="/tags/产品思维/" rel="tag"># 产品思维</a>
           
         </div>
       
@@ -544,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/the-color-of-imessage/" rel="next" title="iMessage 会话气泡的魔鬼细节">
-                <i class="fa fa-chevron-left"></i> iMessage 会话气泡的魔鬼细节
+              <a href="/my-product-design-flow/" rel="next" title="我的产品设计流程与套路">
+                <i class="fa fa-chevron-left"></i> 我的产品设计流程与套路
               </a>
             
           </div>
@@ -553,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/scroll-past-end-for-code/" rel="prev" title="Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果">
-                Xcode 添加 Sublime text 的 scroll_past_end 缓冲区滚动效果 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -696,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#被混淆并滥用的-alert"><span class="nav-number">1.</span> <span class="nav-text">被混淆并滥用的 Alert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-alert"><span class="nav-number">2.</span> <span class="nav-text">1. Alert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-辅助完成任务时使用-alert"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.1 辅助完成任务时使用 Alert</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-提供某些必须引起用户重视的信息时使用-alert"><span class="nav-number">2.0.2.</span> <span class="nav-text">1.2 提供某些必须引起用户重视的信息时使用 Alert</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-action-sheet"><span class="nav-number">3.</span> <span class="nav-text">2. Action Sheet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-完成任务的不同方法"><span class="nav-number">3.0.1.</span> <span class="nav-text">2.1 完成任务的不同方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-完成高危操作时-征求用户的二次确认"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.2 完成高危操作时，征求用户的二次确认</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">资讯类信息流产品研究</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品架构"><span class="nav-number">1.1.</span> <span class="nav-text">产品架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运营体系"><span class="nav-number">1.2.</span> <span class="nav-text">运营体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商业模式"><span class="nav-number">1.3.</span> <span class="nav-text">商业模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
